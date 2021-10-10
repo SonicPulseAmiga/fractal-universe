@@ -1,0 +1,32 @@
+InsideMandel
+{
+	{
+		mirrorx
+		x1=-1.6
+		x2= 0.5
+		y1=-1.0
+		y2= 1.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+		t=[0.5,0.0]
+	}
+	{
+		z=z*z
+		z=z+c
+		v1=real(z)
+		v1=v1*v1
+		v2=imag(z)
+		v2=v2*v2
+		v=v1/v2
+		v=pow(v,t)
+	}
+	{
+		v>bailout
+	}
+	{
+		USE DIFFERENT INSIDEMODELS !!!
+	}
+}

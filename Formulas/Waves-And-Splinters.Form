@@ -1,0 +1,30 @@
+Waves-And-Splinters
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		f=z+c
+		f=f+z
+		f=sin(f)
+		z=cos(z)
+		z=z*f
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

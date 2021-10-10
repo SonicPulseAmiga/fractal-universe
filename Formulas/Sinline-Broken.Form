@@ -1,0 +1,31 @@
+Sinline-Broken
+{
+	{
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+	}
+	{
+		t=sin(pixel)
+		t=tan(t)
+		t=log(t)
+		pixel=[1.0,0.0]/t
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w=sin(z)
+		t=cos(w)
+		s=tan(w)
+		r=t*s
+	}
+	{
+		w>r
+	}
+	{
+	   Use Decomp Outside
+	}
+}

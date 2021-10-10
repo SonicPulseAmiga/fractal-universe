@@ -1,0 +1,27 @@
+Smell2
+{
+	{
+		x1=-1.6
+		x2= 0.5
+		y1=-1.0
+		y2= 1.0
+		bailout=10.0
+	}
+	{
+		z=pixel
+		c=pixel
+		z1=[-2.0,0.0]
+	}
+	{
+		z=z*z
+		z=z+c
+		z1=z1-z
+		w=abs(z1)
+	}
+	{
+		w>bailout
+	}
+	{
+		CHANGE BAILOUT FOR SMELLING
+	}
+}

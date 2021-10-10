@@ -1,0 +1,29 @@
+Korx
+{
+	{
+		x1=-1.5
+		x2= 1.5
+		y1=-1.1
+		y2= 1.1
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+		t=swap(pixel)
+		s=swap(pixel)
+	}
+	{
+		z=z*z
+		z=z+c
+		t=t*t
+		t=t+s
+		u=t*z
+		w=abs(u)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

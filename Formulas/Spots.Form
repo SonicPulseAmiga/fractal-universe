@@ -1,0 +1,29 @@
+Spots
+{
+	{
+		mirrorxy
+		x1=-4.0
+		x2= 4.0
+		y1=-4.0
+		y2= 4.0
+		bailout=2.0
+	}
+	{
+		t=cos(pixel)
+		t=tan(t)
+		r=log(t)
+		pixel=r/t
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

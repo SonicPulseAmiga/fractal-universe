@@ -1,0 +1,27 @@
+Iceflowers
+{
+	{
+		mirrorxy
+		x1=-3.0
+		x2= 3.0
+		y1=-3.0
+		y2= 3.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		t=cos(c)
+		t=t*z
+		z=pow([3.1415,0.0],t)
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

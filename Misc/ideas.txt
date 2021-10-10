@@ -1,0 +1,91 @@
+Ideas
+-----
+	* Orbit
+		* extra Parameterfenster
+			* Follow Spots
+				* die Scrollposition wird auf Mitte des sich verändernden
+				  Bereiches eingestellt
+			* Achsen
+				* on/off
+				* X1,Y1 - X2,Y2
+			* Beschriftung der Achsen
+				* on/off
+			* Raster
+				* on/off
+				* Anzahl der Punkte (gleich Achseneinteilungen)
+			* Colors
+				* on/off
+				* color step
+					* aller wieviel Punkte die Orbitcolor um 1 erhöht wird
+		* aus Solid rausnehmen -> nur während Inspect
+		* aus Options/Misc rausnehmen
+		* Superbitmapfenster
+			* mit Scrollbalken
+				* unten für X-Scroll
+				* rechts für Y-Scroll
+			* Resizegadget
+		* Achsen
+		* Beschriftung der Achsen
+		* Raster
+	* Orbitsplit
+		* Real und Imaginär-Anteil einzeln zeichnen
+		* als Sample abspeichern
+		* bei Mausklick abspielen
+			* Rate einstellen
+			* Oversampling einstellen
+	* Animantionsmöglichkeiten
+		* jeder Parameter kann animiert werden
+			* Ausschnitt
+			* Par1-4
+			* Farbpalette
+			* Parameter für Inside-/Outsidemodell
+		* Überblendungen linear, beschleunigt, gebremst
+	* Insidemodelle
+		* Weg den der Orbit während der Berechnung zurückgelegt hat
+			* Summe(n=0->end) sqrt(abs(p[n].r-p[n+1].r)^2+abs(p[n].i-p[n+1].i.)^2);
+		* Abstand von Initialpunkt und Ergebnispunkt
+			* sqrt(abs(p[0].r-p[end].r)^2+abs(p[0].i-p[end].i.)^2);
+	* Outsidemodelle
+		* Fluchtgeschwindigkeit/-beschleunigung
+			* eventuell zurückgelegte Distanze/Anzahl der Iterationen
+	* Colormodelle
+		* wo der Parameter der Verstärkung einer Änderung dient,
+		  den Faktor zur Farbanzahl relativieren.
+		  z.B.			Wert=  16
+		  =>  2 Farben	Wert=  32
+			 16 Farben	Wert= 256
+			 32 Farben	Wert= 512
+			256 Farben	Wert=4096
+	* Bailout-Modelle
+		* Circle	: sqrt(r*r+i*i)<par
+		* Box		: abs(r)<par && abs(i)<par
+		* Cross		: abs(r)<par || abs(i)<par
+	* AppIcon auf WB
+		* -> Bild laden
+	* Palettescale
+		* als Float
+		* Spread
+			* Zycle 0 		=>  0% of AnzColors
+			* Zycle max Iter=>100% of AnzColors
+			* Überblendung linear,speedup,slowdown
+	* Hilfreiche Programmroutinen (Programm kürzer)
+		* WinInit
+			* WinInit(UWORD width,UWORD height,char *title);
+			=>	smwintags[0].ti_Data=(xres-width)>>1;
+				smwintags[1].ti_Data=(yres-height)>>1;
+				smwintags[2].ti_Data=width;
+				smwintags[3].ti_Data=height;
+				smwintags[6].ti_Data=fxGList;
+				smwintags[7].ti_Data=title;
+		* globale exten-Include
+			* alle extern-Defs die für nahezu alle Files gelten
+	* Screenmodes
+		* GetScrModes
+			* liest alle Modi aus
+		* BuidModeList(xres,yres,depth)
+			* baut aus der Modiliste eine Auswahlliste zusammen die den Anforderungen genügt
+		* ScrModeReq(Liste)
+			* zum Auswählen aus der Liste
+			* wenn Eintrag angeklickt wurde dann GetModeEntry(ModeName)
+		* GetModeEntry(ModeName)
+			* sucht den Eintrag in der Modeliste

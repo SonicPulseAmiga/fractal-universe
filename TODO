@@ -1,0 +1,9 @@
+$ID$
+======================================================================
+
+* Bugs
+  - TopWindow Border for GUI Windows
+  - Colormanagement
+
+* Features
+  - save window state with prefs

@@ -1,0 +1,29 @@
+Vertebrae
+{
+	{
+		mirrorxy
+		x1=-5.0
+		x2= 5.0
+		y1=-5.0
+		y2= 5.0
+		bailout=2.0
+	}
+	{
+		t=cos(pixel)
+		t=tan(t)
+		t=log(t)
+		pixel=[1.0,0.0]/t
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

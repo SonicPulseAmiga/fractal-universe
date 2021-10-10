@@ -1,0 +1,25 @@
+Cromosom
+{
+	{
+		x1=-6.0
+		x2= 6.5
+		y1=-6.15
+		y2= 6.15
+	}
+	{
+		t=[2.5,0.0]/pixel
+		u=pixel
+	}
+	{
+		z=t+u
+		t=sin(z)
+		z=z+t
+		u=z+u
+		w=t+z
+	}
+	{
+		w>u
+	}
+	{
+	}
+}

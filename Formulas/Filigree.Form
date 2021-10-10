@@ -1,0 +1,30 @@
+Filigree
+{
+	{
+		mirrorx
+		x1=-3.0
+		x2= 3.0
+		y1=-3.0
+		y2= 3.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		z=z-c
+		z=sin(z)
+		t=z+z
+		t=t*c
+		t=t-z
+		z=t-z
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

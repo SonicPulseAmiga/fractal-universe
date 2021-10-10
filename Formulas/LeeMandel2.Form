@@ -1,0 +1,27 @@
+LeeMandel2
+{
+	{
+		mirrorxy
+		x1=-1.0
+		x2= 1.0
+		y1=-0.95
+		y2= 0.95
+		bailout=2.0		; Bailoutvalue
+	}
+	{
+		z=pixel
+		d=pixel*pixel
+	}
+	{
+		c=d/z
+		c=c+z
+		c=c*pixel
+		z=c*c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

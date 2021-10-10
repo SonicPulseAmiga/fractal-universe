@@ -1,0 +1,32 @@
+Trance
+{
+	{
+		x1=-9.0
+		x2= 7.5
+		y1=-4.5
+		y2= 4.5
+		par1.r=7.0
+		par1.i=0.0
+		par2.r=2.0
+		par2.i=0.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=pow(z,par2)
+		z=z+c
+		c=z/c
+		z=par1/z
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-INVERSE FACTOR
+		PAR2-POTENZ OF Z
+	}
+}

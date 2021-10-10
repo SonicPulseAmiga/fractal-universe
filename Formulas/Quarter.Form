@@ -1,0 +1,29 @@
+Quarter
+{
+	{
+		mirrorxy
+		x1=-2.8
+		x2= 2.8
+		y1=-1.4
+		y2= 1.4
+		bailout=2.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		t1=z*z
+		t1=t1+[1.0,0.0]
+		t2=z*z
+		t2=t2-[1.0,0.0]
+		t2=t2*c
+		z=t1/t2
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

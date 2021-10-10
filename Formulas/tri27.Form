@@ -1,0 +1,31 @@
+Tri27
+{
+	{
+		mirrorx
+		x1=-4.0
+		x2= 4.0
+		y1=-4.0
+		y2= 4.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		t=log(z)
+		s=s*t
+		z=z*s
+		z=z+c
+		r=log(z)
+		s=r+t
+		s=s/r
+		s=s*t
+		w=abs(s)
+	}
+	{
+		w>z
+	}
+	{
+	}
+}

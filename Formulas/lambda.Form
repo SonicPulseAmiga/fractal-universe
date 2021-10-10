@@ -1,0 +1,32 @@
+Lambda
+{
+	{
+		mirrorx
+		x1=-1.7
+		x2= 1.7
+		y1=-1.65
+		y2= 1.65
+		par1.r=0.6
+		par1.i=0.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		w=z*z				;	w=z^3
+		w=w*z
+		l=par1-[1.0,0.0]	;	v=(la-1)*x
+		v=z*l
+		z=w+v				;	z=w+v-la
+		z=z-par1
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		Par1 - Lambda
+	}
+}

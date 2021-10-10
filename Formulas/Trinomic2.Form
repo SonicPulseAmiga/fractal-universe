@@ -1,0 +1,27 @@
+Trinomic2
+{
+	{
+		mirrory
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		bailout=2.0
+	}
+	{
+		pixel=[1.0,0.0]/pixel
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z+c
+		t=[1.0,1.0]/z
+		z=t*t
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

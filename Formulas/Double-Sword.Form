@@ -1,0 +1,31 @@
+Double-Sword
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+	}
+	{
+		c=pixel
+		v=abs(c)
+		z=pixel
+	}
+	{
+		a1=z*z
+		a2=c-[1.0,0.0]
+		a=a1+a2
+		b1=z+z
+		b2=c-[2.0,0.0]
+		b=b1+b2
+		z=a/b
+		z=z*z
+		w=abs(z)
+	}
+	{
+		w<v
+	}
+	{
+	}
+}

@@ -1,0 +1,30 @@
+MandelInvMixFix
+{
+	{
+		x1=-1.5
+		x2= 1.5
+		y1=-1.1
+		y2= 1.1
+		par1.r=-0.02
+		par1.i=0.0
+		par2.r=0.1282186
+		par2.i=-0.0521646
+		bailout=2.0
+	}
+	{
+		c=par2
+		t=par1/par2
+		c=c-t
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

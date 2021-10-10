@@ -1,0 +1,30 @@
+Squiggle
+{
+	{
+		x1=-1.5
+		x2= 1.5
+		y1=-1.4
+		y2= 1.6
+		par1.r=1.0
+		par1.i=0.27
+		bailout=2.0
+	}
+	{
+		z=pixel
+		c=pixel
+		t=par1*pixel
+	}
+	{
+		z=z*z
+		z=z-t
+		t=par1-z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-SQUIGGLE FACTOR
+	}
+}

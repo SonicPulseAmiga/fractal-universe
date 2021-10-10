@@ -1,0 +1,28 @@
+MandelCrown
+{
+	{
+		x1=-2.5
+		x2= 2.5
+		y1=-2.0
+		y2= 2.0
+		bailout=12.6
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		zrea=real(z)
+		zrea=abs(zrea)
+		zima=imag(z)
+		zima=abs(zima)
+		w=zrea*zima
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

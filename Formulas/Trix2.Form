@@ -1,0 +1,30 @@
+TRIX2
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		par1.r=1.0
+		par1.i=1.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z1=z+par1
+		z2=z-par1
+		z=z1/z2
+		z=z1*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

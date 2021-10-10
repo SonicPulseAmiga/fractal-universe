@@ -1,0 +1,29 @@
+Viva
+{
+	{
+		x1=-2.5
+		x2= 1.5
+		y1=-1.55
+		y2= 1.55
+		par1.r=2.0
+		par1.i=0.0
+		par2.r=0.2
+		par2.i=0.0
+		bailout=2.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=pow(z,par1)
+		z=z+c
+		c=par2/z
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

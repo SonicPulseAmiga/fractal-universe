@@ -1,0 +1,33 @@
+Wineglass
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 2.0
+		y1=-1.75
+		y2= 1.75
+		par1.r=2.0
+		par1.i=0.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		c1=imag(c)
+		c1=c1+[1.0,0.0]
+		c2=real(c)
+		c2=c2/[2.0,0.0]
+		c=c1*c2
+		c=c+z
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

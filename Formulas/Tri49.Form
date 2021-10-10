@@ -1,0 +1,32 @@
+Tri49
+{
+	{
+		mirrorx
+		x1=-4.0
+		x2= 4.0
+		y1=-4.0
+		y2= 4.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		t=z
+		z=sin(z)
+		z=tan(t)
+		z=cos(z)
+		z=acos(z)
+		z=atan(z)
+		z=asin(z)
+		z=t-z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

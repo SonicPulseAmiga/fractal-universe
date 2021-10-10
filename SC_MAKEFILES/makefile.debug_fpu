@@ -1,0 +1,17 @@
+# Filedefs
+
+CSR = \
+FU.c FU-MAIN.c FU-PROJ1.c FU-PROJ2.c FU-CONTR.c FU-COLF.c FU-CPLX.c FU-FUNC.c FU-GFXF.c FU-GFXF-MT0D.c FU-GFXF-MT1D.c FU-IFF.c FU-INTER.c FU-REND.c FU-ErrMsg.c FU-SHook.c FU-IORX.c FU-Tools.c
+
+OBJ = \
+FU.o FU-MAIN.o FU-PROJ1.o FU-PROJ2.o FU-CONTR.o FU-COLF.o FU-CPLX.o FU-FUNC.o FU-GFXF.o FU-GFXF-MT0D.o FU-GFXF-MT1D.o FU-IFF.o FU-INTER.o FU-REND.o FU-ErrMsg.o FU-SHook.o FU-IORX.o FU-Tools.o
+
+# Compile + Link
+
+.o.o:
+
+	sc $(CSR)
+
+FU:	$(OBJ)
+	slink FROM LIB:c.o $(OBJ) TO "FU" LIB LIB:scm881.lib LIB:sc.lib LIB:amiga.lib \
+	BATCH ADDSYM

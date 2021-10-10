@@ -1,0 +1,25 @@
+tri56
+{
+	{
+		mirrorx
+		x1=-10.0
+		x2= 1.0
+		y1=-6.15
+		y2= 6.15
+	}
+	{
+		t=pixel
+		z=pixel
+	}
+	{
+		t=sin(t)
+		t=cos(t)
+		t=tan(t)
+		z=z+t
+	}
+	{
+		z>t
+	}
+	{
+	}
+}

@@ -1,0 +1,39 @@
+
+REXX-Befehle f¸r FU
+-------------------
+
+(D)		-> Done.
+(HD)	-> Half Done.
+
+* ExitFU 								(D)
+	* verl‰ﬂt FU
+* ActivateFU							(D)
+	* bringt FU-Screen in den Vordergrund
+
+* SetZoom(x1,y1,x2,y2)					(D)
+	* setzt ZoomCoordinaten
+* SetParam(nr,par.r,par.i)				(D)
+	* setzt Parameter nr
+* SetFn(nr,fktnr)						(D)
+	* setzt Userfunktion nr
+* SetIter(iter)							(D)
+	* setzt Anzahl der Iterationszyclen
+* SetBailout(bailout)					(D)
+	* setzt Bailoutvalue
+* SetInside(name,val1,val2)				(D)
+	* setzt Insidemodell
+* SetOutside(name,val1,val2)			(D)
+	* setzt Outsidemodell
+* SetFormula(group,formula)
+	* setzt Formel
+* SetScreenmode(modeid,xres,yres,depth,oscan,autoscroll)
+	* Screenmodus einstellen
+.
+.
+.
+* alles nochmal als Get-Version zum Abfragen
+* SavePicture(name,mode)				(D)
+	* Bild als <name> speichern
+	* mode : IFF, Data, IFF+Data
+* RenderPicture							(HD)
+	* Berechnung starten

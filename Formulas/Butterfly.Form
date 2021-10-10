@@ -1,0 +1,29 @@
+Butterfly
+{
+	{
+		mirrorx
+		x1=-1.5
+		x2= 0.8
+		y1=-1.1
+		y2= 1.1
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		f=z+z
+		f=f+z
+		z=f*c
+		z=f+z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

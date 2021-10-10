@@ -1,0 +1,27 @@
+MTet
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 2.0
+		y1=-1.75
+		y2= 1.75
+		par1.r=2.0
+		par1.i=0.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=pow(c,z)
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

@@ -1,0 +1,25 @@
+AltMTet
+{
+	{
+		mirrorx
+		x1=-1.8
+		x2= 0.15
+		y1=-0.85
+		y2= 0.85
+		bailout=4.0
+	}
+	{
+		z=[0.0,0.0]
+		c=pixel
+	}
+	{
+		z=pow(c,z)
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

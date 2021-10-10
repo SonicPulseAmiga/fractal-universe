@@ -1,0 +1,25 @@
+JIMJAMS
+{
+	{
+		mirrorx
+		x1=-1.5
+		x2= 0.3
+		y1=-0.9
+		y2= 0.9
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=pow(c,z)
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

@@ -1,0 +1,29 @@
+MandelSpitzen
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w1=imag(z)
+		w1=swap(w1)
+		w2=real(z)
+		w=w1*w2
+		w=abs(w)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

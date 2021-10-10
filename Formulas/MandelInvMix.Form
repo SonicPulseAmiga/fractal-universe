@@ -1,0 +1,28 @@
+MandelInvMix
+{
+	{
+		x1=-1.5
+		x2= 1.5
+		y1=-1.1
+		y2= 1.1
+		par1.r=0.01
+		par1.i=0.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		t=par1/pixel
+		c=c-t
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

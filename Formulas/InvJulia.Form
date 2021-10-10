@@ -1,0 +1,28 @@
+InvJulia
+{
+	{
+		pickendi=1
+		x1=-50
+		x2= 50
+		y1=-50
+		y2= 50
+		par1.r=-0.481762	; Realpart of c => Var. p1.r
+		par1.i=-0.531657	; Imagpart of c => Var. p1.i
+		bailout=2.0			; Bailoutvalue
+	}
+	{
+		pixel=[1.0,0.0]/pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+par1
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		par1 : Constante C
+	}
+}

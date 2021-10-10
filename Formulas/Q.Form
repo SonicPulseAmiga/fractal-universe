@@ -1,0 +1,37 @@
+Q
+{
+	{
+		x1=-2.0
+		x2= 2.0
+		y1=-1.75
+		y2= 1.75
+		par1.r=0.01
+		par1.i=0.0
+		par2.r=0.01
+		par2.i=0.0
+		par3.r=2.0
+		par3.i=0.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=pow (z,par3)
+		c=c+z
+		c=c+par1
+		t=par2/z
+		c=c-t
+		z=z-c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-SUMMAND OF C
+		PAR2-DIVISOR OF Z
+		PAR3-POTENZ  OF Z
+	}
+}

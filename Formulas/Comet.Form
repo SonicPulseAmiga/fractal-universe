@@ -1,0 +1,30 @@
+Comet
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 1.0
+		y1=-1.15
+		y2= 1.15
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		r=z
+		z=z*z
+		z=z+c
+		s=z
+		z=z*z
+		z=z+c
+		t=z
+		o=s-r
+		p=t-s
+	}
+	{
+		p>o
+	}
+	{
+	}
+}

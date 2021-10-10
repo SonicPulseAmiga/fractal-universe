@@ -1,0 +1,25 @@
+TanMandel
+{
+	{
+		x1=-2.0
+		x2= 1.0
+		y1=-1.15
+		y2= 1.15
+		bailout=0.3
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w=tan(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		CHANGE BAILOUT
+	}
+}

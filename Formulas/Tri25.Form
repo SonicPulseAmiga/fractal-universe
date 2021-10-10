@@ -1,0 +1,32 @@
+Tri25
+{
+	{
+		mirrorx
+		x1=-5.0
+		x2= 5.0
+		y1=-5.0
+		y2= 5.0
+		bailout=2.0
+	}
+	{
+		s=pixel
+		t=[1.0,0.0]/s
+		r=log(t)
+		pixel=sin(t)
+		pixel=log(pixel)
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=[1.0,0.0]/z
+		z=sin(z)
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

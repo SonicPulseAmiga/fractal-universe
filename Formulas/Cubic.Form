@@ -1,0 +1,43 @@
+Cubic
+{
+	{
+		mirrorxy
+		x1=-2.0
+		x2= 2.0
+		y1=-1.75
+		y2= 1.75
+		par1.r=0.3
+		par1.i=0.0
+		bailout=4.0
+	}
+	{
+		p=pixel
+		t=par1
+		t3=[3.0,0.0]*p
+		t2=p*p
+		a=t2-[1.0,0.0]
+		a=a/t3
+		b1=[2.0,0.0]*a
+		b1=b1*a
+		b1=b1*a
+		b2=t2-[2.0,0.0]
+		b2=b2/t3
+		b=b1+b2
+		aa3=a*a
+		aa3=aa3*[3.0,0.0]
+		z=[0.0,0.0]-a
+	}
+	{
+		z1=z*z
+		z1=z1*z
+		z2=aa3*z
+		z=z1-z2
+		z=z+b
+		w=abs(z)
+	}
+	{
+		w<t
+	}
+	{
+	}
+}

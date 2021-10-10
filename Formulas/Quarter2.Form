@@ -1,0 +1,36 @@
+Quarter2
+{
+	{
+		mirrorxy
+		x1=-4.5
+		x2= 4.5
+		y1=-3.6
+		y2= 3.6
+		par1.r=0.6
+		par1.i=0.0
+		par2.r=1.0
+		par2.i=0.0
+		par3.r=2.0
+		par3.i=0.0
+		par4.r=2.0
+		par4.i=0.0
+		bailout=2.0
+	}
+	{
+		z=pixel
+	}
+	{
+		t1=pow(z,par3)
+		t1=t1+par1
+		t2=pow(z,par4)
+		t2=t2-par2
+		t2=t2*z
+		z=t1/t2
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

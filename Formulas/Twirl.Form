@@ -1,0 +1,29 @@
+Twirl
+{
+	{
+		x1=-1.5
+		x2= 0.0
+		y1=-0.75
+		y2= 0.75
+		par1.r=-0.80721
+		par1.i=0.3215686
+		bailout=4.0
+	}
+	{
+		z=pixel
+	}
+	{
+		z1=sin(z)
+		z2=cos(z)
+		z=z1+z2
+		z=z*z
+		z=z+par1
+		w=z1+z2
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-FIXPOINT C
+	}
+}

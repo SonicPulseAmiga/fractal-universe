@@ -1,0 +1,26 @@
+InvMandel
+{
+	{
+		mirrorx
+		x1=-1.5
+		x2= 4.0
+		y1=-2.0
+		y2= 2.0
+		bailout=2.0			; Bailoutvalue
+	}
+	{
+		pixel=[1.0,0.0]/pixel
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

@@ -1,0 +1,30 @@
+Crystals
+{
+	{
+		x1=-4.0
+		x2= 4.0
+		y1=-4.0
+		y2= 4.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		t=z+c
+		z=pow(z,t)
+		z=cos(z)
+		z=z/c
+		w=tan(z)
+		t=z+t
+		t=w*t
+		t=t/z
+		w=w*t
+	}
+	{
+		w<z
+	}
+	{
+	   Use Decomp Outside
+	}
+}

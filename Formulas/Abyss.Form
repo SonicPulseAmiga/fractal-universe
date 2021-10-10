@@ -1,0 +1,27 @@
+Abyss
+{
+	{
+		mirrorx
+		x1=-3.0
+		x2= 0.5
+		y1=-2.0
+		y2= 2.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		z=z+[1.0,0.0]
+		zu=c^z
+		z=z/zu
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

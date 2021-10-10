@@ -1,0 +1,29 @@
+Tri58
+{
+	{
+		mirrorx
+		x1=-5.0
+		x2= 50.0
+		y1=-20.0
+		y2= 20.0
+		bailout=2.0			; Bailoutvalue
+	}
+	{
+		t=sin(pixel)		
+		r=log(pixel)
+		pixel=t*r
+		pixel=[1.0,0.0]/pixel
+		z=pixel*r
+		c=pixel*t
+	}
+	{
+		z=z*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

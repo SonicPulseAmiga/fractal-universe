@@ -1,0 +1,30 @@
+Lens2
+{
+	{
+		x1=-2.0
+		x2= 1.0
+		y1=-1.5
+		y2= 1.5
+		par1.r=0.75
+		par1.i=0.4
+		bailout=4.0
+	}
+	{
+		p=pixel-par1
+		i=abs(p)
+		pixel=pixel*i
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1 - CENTRE OF THE LENS
+	}
+}

@@ -1,0 +1,47 @@
+MandelWindow
+{
+	{
+		x1=-2.5
+		x2= 2.5
+		y1=-2.0
+		y2= 2.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+		t=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		c=c*c
+		c=c+t
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

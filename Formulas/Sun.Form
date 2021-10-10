@@ -1,0 +1,28 @@
+Sun
+{
+	{
+		mirrorx
+		x1=-10.0
+		x2= 10.0
+		y1=-6.15
+		y2= 6.15
+		bailout=10000.0
+	}
+	{
+		t=pixel
+		z=pixel
+	}
+	{
+		t=sin(t)
+		t=cos(t)
+		t=tan(t)
+		z=z*z
+		z=z+t
+		w=abs(z)
+	}
+	{
+		z>bailout
+	}
+	{
+	}
+}

@@ -1,0 +1,26 @@
+Circle
+{
+	{
+		x1=-1.5
+		x2= 1.5
+		y1=-1.1
+		y2= 1.1
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+		t=pixel
+	}
+	{
+		z=z*z
+		z=t+c
+		t=z
+		s=abs(z)
+	}
+	{
+		s>bailout
+	}
+	{
+	}
+}

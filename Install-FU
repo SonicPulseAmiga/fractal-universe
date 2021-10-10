@@ -1,0 +1,114 @@
+; FractalUniverse -------------------------------------------------------------------------------------------
+(MESSAGE 
+	"\n\nWillkommen zur Installation von FractalUniverse !\n\n"
+)
+
+(SET @default-dest
+	(ASKDIR
+		(PROMPT "Bitte Zielverzeichnis aussuchen !\nEin Verzeichnis mit dem Namen FU wird angelegt !")
+		(HELP "Hier können Sie auswählen, wohin Sie das Programm installeren möchten")
+		(DEFAULT @default-dest)
+	)
+)
+(MESSAGE "\n\nBitte stellen Sie sicher, daß auf der Zielpartition\n 0.5 Mb-Speicher frei ist !")
+
+; falls nicht vorhanden, Verzeichnis anlegen ----------------------------------------------------------------
+(SET @default-dest (TACKON @default-dest "FU"))
+(SET fu-dest @default-dest)
+(IF (= (EXISTS fu-dest) 0)
+	(MAKEDIR fu-dest (INFOS))
+)
+
+; Fonts kopieren --------------------------------------------------------------------------------------------
+(COMPLETE 8)
+(COPYFILES
+	(SOURCE "Fonts/")
+	(DEST "FONTS:")
+	(ALL)
+)
+
+; Farben kopieren -------------------------------------------------------------------------------------------
+(COMPLETE 10)
+(SET fusub-dest (TACKON fu-dest "Colors"))
+(COPYFILES
+	(SOURCE "colors/")
+	(DEST fusub-dest)
+	(ALL)
+	(INFOS)
+)
+
+; Formeln kopieren ------------------------------------------------------------------------------------------
+(COMPLETE 25)
+(SET fusub-dest (TACKON fu-dest "Formulas"))
+(COPYFILES
+	(SOURCE "Formulas/")
+	(DEST fusub-dest)
+	(ALL)
+	(INFOS)
+)
+
+; Areas kopieren --------------------------------------------------------------------------------------------
+(COMPLETE 40)
+(SET fusub-dest (TACKON fu-dest "Areas"))
+(COPYFILES
+	(SOURCE "Areas/")
+	(DEST fusub-dest)
+	(ALL)
+	(INFOS)
+)
+
+; ARexx-Scripte ---------------------------------------------------------------------------------------------
+(COMPLETE 55)
+(SET fusub-dest (TACKON fu-dest "Rexx"))
+(COPYFILES
+	(SOURCE "Rexx/")
+	(DEST fusub-dest)
+	(ALL)
+	(INFOS)
+)
+
+; Versionsauswahl -------------------------------------------------------------------------------------------
+(COMPLETE 70)
+(SET pver
+	(ASKCHOICE
+		(PROMPT "Bitte wählen Sie die zu installierende Programmversion aus !")
+		(HELP "Die Version ist von Ihrer verwendeten Computerhardware abhängig !")
+		(CHOICES
+			"68000"
+			"68030-881"
+;			"68040-(881)"
+		)
+		(DEFAULT 0)
+	)
+)
+(IF (= pver 0)
+	(COPYFILES
+		(SOURCE "fu/fu.68000")
+		(DEST fu-dest)
+		(NEWNAME "FractalUniverse")
+	)
+)
+(IF (= pver 1)
+	(COPYFILES
+		(SOURCE "fu/fu.68030-881")
+		(DEST fu-dest)
+		(NEWNAME "FractalUniverse")
+	)
+)
+;(IF (= pver 2)
+;	(COPYFILES
+;		(SOURCE "fu/fu.68040-881")
+;		(DEST fu-dest)
+;		(NEWNAME "FractalUniverse")
+;	)
+;)
+(COPYFILES
+	(SOURCE "FU/FractalUniverse.info")
+	(DEST fu-dest)
+)
+
+; Fertig ----------------------------------------------------------------------------------------------------
+(EXIT
+	"\n\nFU konnte erfolgreich installiert werden.\n"
+	"Bitte schlagen Sie im Handbuch nach, um zu erfahren wie das Programm bedient und gestartet wird.\n"
+)

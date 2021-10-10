@@ -1,0 +1,28 @@
+Total-Chaos
+{
+	{
+		x1=-1.0
+		x2= 50.0
+		y1=-26.0
+		y2= 26.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*pixel
+		z=log(z)
+		z=c/z
+		z=z+c
+		w=pow(pixel,z)
+		r=pow(z,pixel)
+		w=cos(w)
+		r=sin(r)
+	}
+	{
+		w>r
+	}
+	{
+	}
+}

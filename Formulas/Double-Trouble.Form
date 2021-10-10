@@ -1,0 +1,28 @@
+Double-Trouble
+{
+	{
+		mirrorx
+		x1=-3.0
+		x2= 3.0
+		y1=-2.15
+		y2= 2.15
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z-c
+		z=z*z
+		t=z+[2.0,0.0]
+		t=t+z
+		z=t/c
+		p=z*t
+		p=p*c
+	}
+	{
+		p<c
+	}
+	{
+	}
+}

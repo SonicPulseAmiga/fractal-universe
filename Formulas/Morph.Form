@@ -1,0 +1,29 @@
+Morph
+{
+	{
+		x1=-2.5
+		x2= 1.5
+		y1=-1.75
+		y2= 1.75
+		par1.r=0.005
+		par1.i=0.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+		t=par1/pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		c=c+t
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-MORPH FACTOR (SHOULD BE SMALL)
+	}
+}

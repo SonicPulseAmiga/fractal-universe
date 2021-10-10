@@ -1,0 +1,35 @@
+SmellInv
+{
+	{
+		x1=-2.5
+		x2= 3.5
+		y1=-2.3
+		y2= 2.3
+		par1.r=0.000001
+		par1.i=0.0
+		par2.r=2.0
+		par2.i=0.0
+		bailout=4.0
+	}
+	{
+		pixel=[1.0,0.0]/pixel
+		z=pixel
+		c=pixel
+		t=par1/pixel
+		s=par2
+	}
+	{
+		z=z+t
+		z=pow(z,s)
+		t=t/z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-SMELL FACTOR (SHOULD BE SMALL)
+		PAR2-POTENZ OF Z
+	}
+}

@@ -1,0 +1,27 @@
+AltJTet
+{
+	{
+		mirrorx
+		x1=-3.0
+		x2= 3.0
+		y1=-3.0
+		y2= 3.0
+		par1.r=1.0
+		par1.i=0.0
+		bailout=4.0
+	}
+	{
+		z=par1
+		c=pixel
+	}
+	{
+		z=pow(c,z)
+		z=z+par1
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

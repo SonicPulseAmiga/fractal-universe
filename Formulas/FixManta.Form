@@ -1,0 +1,31 @@
+FixManta
+{
+	{
+		pickendi=2
+		x1=-3.0
+		x2= 3.0
+		y1=-3.0
+		y2= 3.0
+		par1.r= 1.0			; Realpart of t => Var. p1.r
+		par1.i= 0.0			; Imagpart of t => Var. p1.i
+		par2.r= 1.0			; Realpart of c => Var. p2.r
+		par2.i= 0.0			; Imagpart of c => Var. p2.i
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=par2
+		t=par1/pixel
+	}
+	{
+		z=z+t
+		z=z*z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

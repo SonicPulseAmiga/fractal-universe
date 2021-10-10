@@ -1,0 +1,42 @@
+MandelPotenzMix
+{
+	{
+		x1=-2.8
+		x2= 2.8
+		y1=-1.4
+		y2= 1.4
+		par1.r=2.0
+		par1.i=0.0
+		par2.r=2.03
+		par2.i=0.0
+		par3.r=1.98
+		par3.i=0.0
+		par4.r=1.995
+		par4.i=0.0
+		bailout=2.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=pow(z,par1)
+		z=z+c
+		z=pow(z,par2)
+		z=z+c
+		z=pow(z,par3)
+		z=z+c
+		z=pow(z,par4)
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		POTENZ 1 OF Z
+		POTENZ 2 OF Z
+		POTENZ 3 OF Z
+		POTENZ 4 OF Z
+	}
+}

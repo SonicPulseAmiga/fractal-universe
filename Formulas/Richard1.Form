@@ -1,0 +1,28 @@
+Richard1
+{
+	{
+		mirrorxy
+		x1=-2.0
+		x2= 2.0
+		y1=-1.75
+		y2= 1.75
+		bailout=50.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z1=z*z
+		z=sin(z1)
+		z=z*z1
+		z=z+z1
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

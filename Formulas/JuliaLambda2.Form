@@ -1,0 +1,30 @@
+JuliaLambda2
+{
+	{
+		pickendi=2
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		par1.r=1.0
+		par1.i=0.5
+		par2.r=-0.74543		; Realpart of c => Var. p1.r
+		par2.i=0.11301		; Imagpart of c => Var. p1.i
+		bailout=2.0			; Bailoutvalue
+	}
+	{
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+par2
+		z=par1*z
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		par1 : Constante C
+	}
+}

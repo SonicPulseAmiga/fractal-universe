@@ -1,0 +1,27 @@
+X
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 1.0
+		y1=-1.15
+		y2= 1.15
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		t=[1.0,0.0]/z
+		z=pow(z,t)
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

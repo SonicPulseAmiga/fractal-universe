@@ -1,0 +1,31 @@
+Sunstone
+{
+	{
+		x1=-3.0
+		x2= 3.0
+		y1=-3.0
+		y2= 3.0
+		par1.r=0.28
+		par1.i=0.18
+		par2.r=2.0
+		par2.i=0.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=pow(z,par2)
+		z=z-c
+		c=par1/z
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	  PAR1 - C CHANGEING
+	  PAR2 - POTENZ OF Z
+	}
+}

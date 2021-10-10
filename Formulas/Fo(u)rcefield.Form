@@ -1,0 +1,30 @@
+Fo(u)rcefield
+{
+	{
+		mirrorxy
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		par1.r=0.5
+		par1.i=0.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=[2.0,0.0]
+	}
+	{
+		z=c/z
+		z=pixel*z
+		z=z*z
+		z=z+par1
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		par1 : Constante C
+	}
+}

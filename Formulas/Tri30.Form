@@ -1,0 +1,26 @@
+Tri30
+{
+	{
+		mirrorx
+		x1=-8.0
+		x2= 6.0
+		y1=-6.5
+		y2= 6.5
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		t=sin(c)
+		z=pow(t,z)
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

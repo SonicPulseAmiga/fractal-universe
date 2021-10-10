@@ -1,0 +1,29 @@
+Trix
+{
+	{
+		x1=-2.0
+		x2= 1.0
+		y1=-1.5
+		y2= 1.5
+		par1.r=1.0
+		par1.i=0.0
+		par2.r=0.75
+		par2.i=0.2
+		bailout=1.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		z=z+par1
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

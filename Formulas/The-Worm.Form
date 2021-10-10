@@ -1,0 +1,29 @@
+The-Worm
+{
+	{
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		r=z+c
+		r=sin(r)
+		z=r*r
+		t=[1.0,1.0]/z
+		z=t*t
+		z=[1.0,0.0]/z
+		z=z*t
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

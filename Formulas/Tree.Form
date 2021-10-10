@@ -1,0 +1,37 @@
+Tree
+{
+	{
+		x1=-7.5
+		x2= 7.5
+		y1=-5.9
+		y2= 5.9
+		par1.r=0.19
+		par1.i=0.0
+		par2.r=1.0
+		par2.i=0.0
+		par3.r=1.0
+		par3.i=0.0
+		par4.r=2.0
+		par4.i=0.0
+		bailout=4.0
+	}
+	{
+		c=par2/pixel
+		z=par3/pixel
+	}
+	{
+		z=pow(z,par4)
+		z=z+c
+		c=par1/z
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-TREE FACTOR
+		PAR2-INVERSE FACTOR C
+		PAR3-INVERSE FACTOR Z
+		PAR4-POTENZ OF Z
+	}
+}

@@ -1,0 +1,1199 @@
+@database FU
+
+Copyright (c) 1995 Stefan Kost
+All Rights Reserved
+
+@Remark $VER: FU.guide 2.0 (12.2.95)
+@Remark AmigaGuide-OnLine-Hilfe für FractalUniverse 2.0
+
+@master progdir:fu.guide
+@index progdir:fu.guide/main
+
+@node main "Inhalt"
+
+*******************************************************************************
+*                                                                             *
+*              #####  ####    ###    ####  #####   ###   #                    *
+*              #..... #...#  # ..#  # ....  .#... # ..#  #.                   *
+*              ###    #### . #####. #.       #.   #####. #.                   *
+*              #...   #...#  #...#. #.       #.   #...#. #.                   *
+*              #.     #.  #. #.  #.  ####    #.   #.  #. #####                *
+*               .      .   .  .   .   ....    .    .   .  .....               *
+*                                                                             *
+*             #   #  ####   #  #   #   ####  ####    ####   ####              *
+*             #.  #. #...#  #. #.  #. # .... #...#  # .... # ....             *
+*             #.  #. #.  #. #. #.  #. ###    #### .  ###   ###                *
+*             #.  #. #.  #. #.  # # . #...   #...#    ..#  #...               *
+*              ### . #.  #. #.   # .   ####  #.  #. #### .  ####              *
+*               ...   .   .  .    .     ....  .   .  ....    ....             *
+*                                                                             *
+*******************************************************************************
+*                                                                             *
+*                             V 1.6 By Stefan Kost                            *
+*                                                                             *
+*******************************************************************************
+
+0 Einführung
+	@{" 0.1 Was ist FractalUniverse ?   " link Charpter0.1 }
+	@{" 0.2 Warum FractalUniverse ?     " link Charpter0.2 }
+	@{" 0.3 Wo läuft FractalUniverse ?  " link Charpter0.3 }
+	@{" 0.4 Copyright                   " link Charpter0.4 }
+	@{" 0.5 Registration                " link Charpter0.5 }
+1 Bedienung
+	@{" 1.1 Hauptmenü                   " link Charpter1.1 }
+	@{" 1.2.1 Colors                    " link Project_Colors }
+	@{" 1.2.2 Zoom                      " link Project_Zoom }
+	@{" 1.2.3 Options                   " link Project_Options }
+	@{" 1.2.4 Formula                   " link Project_Formula }
+	@{" 1.2.5 Screen                    " link Project_Screen }
+	@{" 1.2.6 DiskOp.                   " link Project_DiskOp }
+	@{" 1.2.7 Prefs                     " link Project_Prefs }
+	@{" 1.2.8 About                     " link Project_About }
+	@{" 1.2.9 Exit                      " link Project_Exit }
+2 Formulas
+	@{" 2.1 Einführung                  " link Formulas_Einführung }
+	@{" 2.2 InvCircle/NormCircle        " link Formulas_Circle }
+	@{" 2.3 Formula                     " link Formulas_Formula }
+	@{" 2.4 InvNewton/NormNewton        " link Formulas_Newton }
+	@{" 2.5 Inv/Norm-, Var/Fix-PlaneC   " link Formulas_PlaneC }
+3 Arexx-Implementierung
+	@{" 3.1 Einführung                  " link "progdir:guides/fu-arexx.guide/Charpter3.1" }
+	@{" 3.2 Allgemeine Funktionen       " link "progdir:guides/fu-arexx.guide/Charpter3.2" }
+	@{" 3.3 I/O Funktionen              " link "progdir:guides/fu-arexx.guide/Charpter3.3" }
+4 Fehlermeldungen und Abfragen
+	@{" 4.1 Fehlermeldungen             " link "progdir:guides/fu-fehlermeldungen.guide/Messages" }
+	@{" 4.2 Abfragen                    " link "progdir:guides/fu-fehlermeldungen.guide/Questions" }
+5 Anhang
+	@{" 5.1 Aussichten                  " link Charpter5.1 }
+	@{" 5.2 Danksagung                  " link Charpter5.2 }
+	@{" 5.3 Glossar                     " link "progdir:guides/fu-glossar.guide/main" }
+	@{" 5.4 History                     " link Charpter5.4 }
+	@{" 5.5 Werbung                     " link Charpter5.5 }
+@endnode
+
+@node Charpter0.1 "0.1 Was ist FractalUniverse ?"
+
+0.1 Was ist FractalUniverse ?
+-----------------------------
+
+Fractal-Universe (im weiteren FU) ist eine Fraktalgenerator, der sehr viele
+Möglichkeiten bietet, komplexe dynamische Systeme zu erforschen. Einige davon
+werde ich nachfolgend aufzählen :
+	* flexible Programmstruktur; dadurch leichte Erweiterbarkeit
+	* zur Zeit 68 verschiedene eingebaute Formeln
+		* Mandelbrot-Types
+		* Julia-Types
+		* Newton-R (mit vielen Extraparametern)
+		* Interferenz
+		* Magnetic-Types
+	* Formelinterpreteter, der in eigener Scriptssprache geschriebene For-
+	  melfiles ließt und interpretiert. Diese Formeln können mit allen
+	  Funktionen des Programmes benutzt werden. Mitgeliefert werden mehrere
+	  fertige Scripts (über 100 Stück).
+	* mächtiger Farbpaletteneditor, der auch auf nicht-AGA-Rechnern mit 256
+	  Paletteneinträgen rechnet. Die Farben werden über Farbkomponenten-
+	  shapes beeinflußt, wodurch sehr schöne und sanfte Farbverläufe er-
+	  zielt werden. Die Farbpaletten können natürlich auch abgespeichert
+	  werden. Es werden 160 Paletten mitgeliefer. Dabei benötigt eine Farb-
+	  palette nur 24 Bytes !!!.
+	* Colorcycling mit verschiedenen Geschwindigkeiten und Richtungen
+	* hervorragende Bildqualität durch verschiedene Ditheringverfahren
+	  (None, Small, Medium, Large, Ordered) zur Steckung der Farbpalette
+	  (wichtig bei nicht-AGA-Rechnern)
+	* benutzt Standart, ECS, AA-Chipsatz (außer HAM,HAM8 und EHB) und Gra-
+	  fikkarten (getestet mit der Merlin-Grafikkarte von Ex. X-Pert)
+	* mehrere Renderingalgorhitmen (Solid, Square, Square+, Preview)
+	* mehrere Inside- (12 Stück) und Outsidemodelle (18 Stück). Dadurch
+	  werden verschiedene Zusammehänge in Fraktalen sichtbar.
+	* Inspect-Modus zur genaueren Untersuchung
+	* mehrere Zoommodi
+		* Zoom in, Zoom out, Window
+		* proportional, unproportional
+		* Centre, Corners
+	* OS2.0 / 3.0 - Benutzeroberfläche
+		* komplette Gadgetsteuerung
+		* Fontsensitiv
+		* Screensensitiv
+	* AmigaGuide-OnLine-Hilfe in jedem Fenster
+	* AREXX-Port mit vielen Kommandos und Funktionen ; damit auch Animati-
+	  onsfähig ; mehrere Beispielscripts liegen bei
+@endnode
+
+@node Charpter0.2 "0.2 Warum FractalUniverse ?"
+
+0.2 Warum Fractaluniverse
+-------------------------
+
+Nun gibt es ja sowohl im kommerziellen als auch im Public-Domain-Bereich schon
+eine ganze Menge Fraktalprogramme. Warum also noch eins ? Die meisten dieser
+Programme können nur die Mandelbrot-Menge und eventuell noch die Julia-Menge
+berechnen. Keines dieser Programme nutzt das ESC-Chipset ordentlich aus. Kaum
+eins hat verschiedene Inside- bzw. Outsidemodelle. Keines hat einen ordentli-
+chen Formelinterpreter. Usw. ...
+So beschloss ich also meinen eigenen Fraktalgenerator zu schreiben. Als Vorbild
+diente mir das Programm FractInt auf dem PC (allerdings nur in Sachen Vielfalt
+und nicht wegen der Bedienung).
+@endnode
+
+@node Charpter0.3 "0.3 Wo läuft FractalUniverse ?"
+
+0.3 Wo läuft Fractaluniverse
+----------------------------
+
+Das Programm läuft auf allen Amigarechnern mit der Betriebssystemversion>=2.0.
+Da die Berechnung von Fraktalen sehr rechenaufwendig ist, wird eine Turbokarte
+empfohlen.
+Wenn FractalUniverse von der Shell aus gestartet wird muß der Stack 40000 Bytes
+groß sein, da es sonst zu Programmabstürzen kommen kann. Benutzen Sie zum Set-
+zen der Stackgröße folgenden Befehl "stack 40000".
+@endnode
+
+@node Charpter0.3 "0.4 Copyright"
+
+0.4 Copyright
+-------------
+
+Programm	: FractalUniverse1.5
+Dokumentation	: fu.guide
+		  guides/sfx-arexx.guide
+		  guides/sfx-fehlermeldungen.guide
+		  guides/sfx-glossar.guide
+Daten		: areas/*.*
+		  colors/*.*
+		  formulas/*.*
+		  rexx/*.*
+Keyfile		: keyfiles/fu.key
+(C) Copyright 1993-1995 Stefan Kost. All Rights Reserved.
+
+Es werden keine Garantien für die vollständige Funktion der Software gegeben.
+Weiterhin wird keine Haftung für Schäden übernommen die durch die unsachgemäße
+Benutzung der Software entsteht.
+Falls Sie einen Fehler in der Software gefunden haben, dann schreiben Sie mir
+bitte eine genaue Beschreibung desselben. Ich bin bemüht diese schnellstmöglich
+zu entfernen.
+
+Die Software ist, bis auf das Keyfile, frei kopierbar - es ist sogar erwünscht
+diese zu verbreiten, solange dafür keine Gebühren größer 5.-DM verlangt werden.
+Wenn das Programm in Programmsammlungen aufgenommen werden soll, so kontak-
+tieren Sie mich bitte vorher.
+
+Das Programm darf ohne vorherige Anfrage auf folgenden Serien / CD`s veröf-
+fentlicht werden.:
+	Aminet CD
+	Fred Fish CD
+	Saar PD-Serie
+	Time PD-Serie
+
+
+amigaguide.library
+(C) Copyright 1992 Commodore-Amiga, Inc.  All Rights Reserved.
+Reproduced and distributed under license from Commodore.
+
+Amigaguide software is provided "as-is" and subject to change. No warranties
+are made. All use is at your own risk. No liability or responsibility is assu-
+med.
+@endnode
+
+@node Charpter0.5 "0.5 Registration"
+
+0.5 Registration
+----------------
+
+Wenn Sie Ihnen die Demoversion gefällt, können Sie sich bei mir registrieren
+lassen. Gegen Zahlung von 20,00 DM bekommen Sie ein persönliches Keyfile zu ge-
+sendet, welche Ihnen ermöglicht alle Funktionen des Programms zu nutzen. Im
+Keyfile sind Ihre Daten (Name, Anschrift, ...) gespeichert und deshalb dürfen
+Sie es nicht weitergeben. Neuere Versionen des Programmes erkennen das Keyfile
+selbsverständlich.
+
+Die Zahlung erfolgt bar oder durch Überweisung auf untenstehendes Konto.
+
+Stefan Kost
+Holbeinstrasse 1
+04229 Leipzig
+Germany
+
+Stadt- und Kreissparkasse Leipzig
+BLZ: 860 555 92
+KTO: 1867809822
+
+@endnode
+
+@node Charpter1.1 "1.1 Hauptmenü"
+
+1.1 Hauptmenü
+-------------
+
+Um FU zu starten führen Sie bitte einen Doppelklick auf das FU-Programmicon
+aus, welches sich in der Schublade befindet, die Sie bei der Installation aus-
+gewählt haben. Daraufhin erscheint folgende Oberfläche :
+
+   +--------------- Project ---------------+     +------- Control -------+
+   |                                       |     |                       |
+   |    @{" 1.2.1 Colors  " link Project_Colors  } @{" 1.2.6 DiskOp. " link Project_Diskop }    |     |    @{" 1.3.1 Render  " link Control_Render  }    |
+   |    @{" 1.2.2 Zoom    " link Project_Zoom    } @{" 1.2.7 Prefs   " link Project_Prefs  }    |     |    @{" 1.3.2 View    " link Control_View    }    |
+   |    @{" 1.2.3 Options " link Project_Options } @{" 1.2.8 About   " link Project_About  }    |     |    @{" 1.3.3 Inspect " link Control_Inspect }    |
+   |    @{" 1.2.4 Formula " link Project_Formula } @{" 1.2.9 Exit    " link Project_Exit   }    |     |                       |
+   |    @{" 1.2.5 Screen  " link Project_Screen  }                    |     |                       |
+   |                                       |     |                       |
+   +---------------------------------------+     +-----------------------+
+@endnode
+
+@node Project_Colors "1.2.1 Colors"
+
+1.2.1 Colors
+------------
+
+In diesem Fenster lassen sich die Farbpaletten beeinflussen. Im oberen Teil
+werden die 256 verschiedenen Farben (auf jedem Rechner - auch ECS) angezeigt.
+In der Mitte befinden sich drei Bereiche, von denen ein jeder die Einstellungen
+für eine Farbkomponente (der Computer setzt eine Mischfarbe aus Rot, Grün und
+Blau zusammen) beinhaltet. Im unteren Bereich befinden sich verschiedene Funk-
+tionsgadgets. Wie sind die Farbpaletten aufgebaut ? In der Mitte eines jeden
+Bereiches sieht man ein Feld mit einer Kurve. Diese repräsentiert den Verlauf
+des Farbanteiles über die Palette hinweg, d.h. wenn die Kurve ansteigt, so er-
+höht sich der Farbanteil und umgekehrt sinkt er ab.
+
+Red Green Blue Bereiche
+~~~~~~~~~~~~~~~~~~~~~~~
+Pfeil-Gadgets
+	Mit den Gadgets an den Rändern kann man die Kurve verschieben. Mit den
+	einfachen Pfeilen in kleinen Schritten und mit den doppelten in großen
+	Schritten.
+"R"-Gadgets
+	Die Gadgets mit dem "R" dienen dem Rücksetzen der Scrollposition auf
+	die Standartwerte.
+Shape-Type
+	Mit dem Cycle-Gadget unterhalb der Kurve können Sie zwischen verschie-
+	denen Kurven wechseln.
+"ScX" und "ScY"-Gadgets
+	Mit den "ScX" und "ScY"-Gadgets können Sie die Kurven scalieren. Zur
+	Zeit sind hier nur ganzzahlige Werte möglich.
+
+Control-Bereich
+~~~~~~~~~~~~~~~
+"Quit"
+	Hiermit verlassen Sie den Editor.
+"Load" und "Save"
+	Mit diesen Funktionen können Sie Ihre Paletten laden und speichern. Es
+	werden bereits viele, viele Paletten mitgeliefert, da diese nur je 24
+	Bytes groß sind.
+"View"
+	Nach einen Klick auf dieses Gadget sehen sie den Screen mit dem zuletzt
+	berechneten Fraktal (zum Start ist dieser leer). Somit können Sie je-
+	derzeit kontrollieren, wie sich die Palettenänderungen auf das Bild
+	auswirken. Außerdem stehen Ihnen während des Anzeigens der Fraktalgra-
+	fik noch einige Sonderfunktionen zur Verfügung, die ich bei der Funkti-
+	on "View" in Kapitel 4.2 erkläre. Mit einem Mausklick (rechte oder lin-
+	ke Maustaste) oder der "ESC"-Taste gelangen Sie auf den FU-Benutzer-
+	oberfläche zurück.
+Palettenpuffer
+	Mit dem Cycle-Gadget rechts unten können Sie zwischen 10 Farbpaletten-
+	puffern umschalten, d.h. Sie haben ständig 10 verschiedene Farbpaletten
+	zur Verfügung. Zum Wechseln der Puffer können Sie auch die Tasten "1"
+	bis "0" über den Buchstaben verwenden.
+	Am besten Sie schauen sich die mitgelieferten Farbpaletten einmal genau
+	an und probieren die einzelnen Funktionen aus. Sämtliche Änderungen
+	werden sofort in der Palette sichtbar.
+@endnode
+
+@node Project_Zoom "1.2.2 Zoom"
+
+1.2.2 Zoom
+----------
+
+Mit den Funktionen im Zoom-Menü können Sie den zu berechnenden Ausschnitt sowie
+die Größe des Berechnungsfensters festlegen.
+
+Zoom-Bereich
+~~~~~~~~~~~~
+"Type"-Gadget
+	* Zoom In
+		Der ausgewählte Bereich wird auf Windowgröße gebracht.
+	* Zoom Out
+		Das Window wird auf die Größe des ausgewählten Bereiches ge-
+		bracht.
+	* Window
+		Die Größe des Berechnungsfensters wird auf die ausgewählten
+		Werte gesetzt. Dies ist nützlich wenn man einen Überblick er-
+		halten will, da	aufgrund des kleineren Ausschnittes weniger
+		Punkte zu berechnen sind.
+	* Recalc.
+		Hiermit kann ein Bereich festgelegt werden, der neu berechnet
+		werden soll. Dies ist z.B. notwendig, wenn ein Bild gerendert
+		wurde, und man an einigen Stellen Ungenauigkeiten entdeckt
+		(z.B. zu wenige Iterationen). In einem solchen Falle setzt man
+		die Iterationsanzahl höher und umrahmt den betroffenen Bereich.
+		So braucht man nicht das komplette Bild neuberechnen.
+"Mode"-Gadget
+	* Proportional
+		Hier werden die Proportionen des Ausschnittes beibehalten.
+	* Unproportional
+		Bei dieser Wahl können Sie beliebig vergrößern. Allerdings kön-
+		nen dadurch verzerrte Abbildung berechnet werden.
+"Snap"-Gadget
+	* Centre
+		Während des Zoomens klicken Sie nun auf des Zentrum des zu ver-
+		größernden Bereiches und ziehen dann mit gedrückter Maustaste
+		den Rahmen zu einem Eckpunkt weg.
+	* Corner
+		Bei dieser Variante klicken Sie, im Gegensatz zu "Centre", ei-
+		nen Eckpunkt des interessanten Gebietes an und ziehen den Rah-
+		men zur gegenüberliegenden Ecke.
+Zoom
+	Bei einem Klick auf diesen Knopf sehen Sie den Hauptscreen und ein ge-
+	stricheltes Fadenkreuz an Ihrem Mauszeiger. Jetzt können Sie mit der
+	Leertaste zwischen der Original- und einer Graustufenpalette wechseln,
+	falls der Kontrast zu schlecht ist und Sie somit das Fadenkreuz zu
+	schlecht sehen. Außerdem ist es möglich mit "H" b.z.w. "h" den Mauszei-
+	ger an- und auszuschalten. Nun können Sie entsprechend dem gewählten
+	Modus einen Bereich festlegen.
+Use
+	Dieses Gadget wird erst aktiv, wenn Sie zuvor gezoomt haben. Durch Be-
+	tätigen dieses Schalters werden die Bereichswerte übernommen. Dies gibt
+	Ihnen die Möglichkeit immer wieder einen Bereich auszuwählen und erst
+	wenn Sie zufrieden sind, klicken Sie auf  "Use" und erst dann werden
+	die letzten Werte durch die aktuellen ersetzt. Falls die Option Type=
+	Recalc ausgewählt wurde wird der entsprechende Bereich sofort neu be-
+	rechnet. Die Koordinaten und die Bereichswerte werden in diesem Falle
+	nicht verändert.
+
+Window-Bereich
+~~~~~~~~~~~~~~
+X1, X2, Y1 und Y2 Gadgets
+	In diesen Gadgets können Sie die Größe des zu berechnenden Ausschnittes
+	auf dem Bildschirm manuell festlegen, sowie kontrollieren. Wenn Sie im
+	Zoom-Bereich bei "Type" "Window" anwählen und dann auf "Zoom" klicken,
+	verändern Sie diese Werte grafisch mit der Maus. Dies kann notwendig
+	sein, falls eine Berechnung sehr lange dauert und man einen schnellen
+	Überblick bekommen möchte. Wenn Sie mit dem kleinen Bild zufrieden
+	sind, können Sie es sich in hoher Qualität und voller Bildschirmgröße
+	berechnen lassen.
+Reset Window
+	Durch Druck auf diesen Button werden die Fensterwerte auf Maximum, d.h.
+	auf die Screengröße gesetzt.
+Center Window
+	Durch Anklicken dieses Schalters, wird das Renderwindow auf dem Screen
+	zentriert. Dies ist insbesondere nützlich, wenn man die Koordinaten ma-
+	nuell eingegeben hat.
+
+Corners-Bereich
+~~~~~~~~~~~~~~~
+Real Min-Real Max
+	Hier sehen Sie dan zu berechnenden Bereich auf der X-Achse, die die
+	realen Zahlen repräsentiert.
+Imag Min-Imag Max
+	Dito für die Y-Achse, auf die die imaginären Zahlen abgebildet werden.
+Rotation
+	Hier können Sie einen Winkel in Grad eingeben. Das Bild wird dann um
+	diesen Winkel gedreht. Bitte beachten Sie, daß Sie in gedrehte Bilder
+	zur Zeit nicht weiter reinzoomen können, da die dann errechneten Werte
+	nicht stimmen.
+Mirror-Mode
+	Mit diesem Cycle-Gadget können Sie die verschiedenen Spiegelmodi er-
+	zwingen. Durch Spiegelung kann FU Rechenzeit sparen, da es gleiche
+	Bildteile kopiert. Normalerweise ist hier der richtige Modus einge-
+	stellt. Bei manchen Formeln ist das aber abhängig von der Wahl einzel-
+	ner Parameter, so das dieses Gadget oft auf "None" steht. Wenn Sie also
+	eine Grafik berechnen, die an einer Koordinatenachse gespiegelt ist, so
+	können Sie dies hier einstellen. Es existieren derzeit folgende Modi :
+		"None"			: keine Spiegelung
+		"MirrorX"		: an der X-Achse wird gespiegelt
+		"MirrorY"		: an der Y-Achse wird gespiegelt
+		"Both"			: an beiden Achsen wird gespiegelt
+Reset
+	Wenn Sie das Intervall auf die Koordinaten für das Grundbild zurückset-
+	zen wollen, dann erreichen Sie das mit diesen Knopf.
+AspectX und AspectY
+	Falls Sie die Koordinaten manuell verändert haben oder unproportional
+	gezoomt haben, so können Sie hiermit den Aspect der Grafik wiederher-
+	stellen. Bei "AspectX" wird die X-Achse im Verhältnis zur Y-Achse ange-
+	paßt und umgekehrt.
+@endnode
+
+@node Project_Options "1.2.3 Options"
+
+1.2.3 Options
+-------------
+
+In diesem Fenster lassen sich sämtliche Einstellungen treffen, die das Ausse-
+hen, sowie die Generierung des Bildes betreffen.
+
+Drawopt.-Bereich
+~~~~~~~~~~~~~~~~
+Dither
+	FU benutzt zum Zeichnen der Grafiken Paletten-Screen-Modi, d.h für jede
+	Farbe existiert ein "Farbtopf" der die Farbmischung enthält. Bei den
+	Nicht-AGA-Rechner gibt es nur 32 solcher Farbregister. Um mehr Farben
+	vorzutäuschen und damit sanftere Übergänge zwischen den einzelnen Farb-
+	flächen zu erhalten benutzt FU die Technik des Rasterns. So werden
+	manche Flächen mit Punktmustern zweier benachbarter Farben gefüllt und
+	so eine neue Farbe simuliert. Da das Auge die Rasterung nur aus der
+	Nähe erkennt (bei Farben mit wenig Kontrast (helle Farben z.B. türkis->
+	grün) meist überhaupt nicht) kann man so die Qualität der Bilder be-
+	trächtlich erhöhen. Vor allem in hohen Bildschirmauflösungen fallen die
+	feinen Muster kaum auf. FU stellt verschiedene Verfahren und Stufen be-
+	reit, die Sie mit diesem Cycle-Gadget umschalten können.
+	* None
+		Bei dieser Option wird nicht gedithert.
+	* Small
+		Hier wird ein 2x2 Punktmuster benutzt um die Farbanzahl zu ver-
+		doppeln. Diese Stufe ist für LoRes-Auflösungen (320xYYY) sehr
+		gut geeignet.
+	* Medium
+		Auch hier wird ein 2x2 Punktmuster benutzt, die Farbanzahl je-
+		doch wird vervierfacht.
+	* Large
+		Bei dieser Variante wird ein 4x4 Punktmuster verwendet. Dadurch
+		wird die Farbpalette um den Faktor 16 erweitert. Dieses Muster
+		sollte man nur in hohen Auflösungen (ab ca. 640x512 Pixeln) an-
+		wählen, da man die Rasterung sonst zu sehr sieht.
+	* Ordered
+		Dieses Verfahren arbeitet über einen Algorithmus, der die Pa-
+		lette nahezu beliebig streckt. Es liefert allerdings nur in ho-
+		hen Auflösungen (z.B. SuperHires : von 4 Farben auf 64 !!) mit
+		dem Rendermodell "Solid" ansprechende Ergebnisse.
+OrdScl
+	Dieses Gadget wird bei Anwahl von Dither=Ordered aktiv. Hier kann dann
+	der Scalierungsfaktor für die Farbpalette eingegeben werden. Diesen
+	sollte man jedoch nicht zu hoch setzen, da die Muster sonst zu gut zu
+	erkennen sind. Werte von 4-16 sind durchaus machbar.
+Render
+	FU bietet verschiedene Renderingmodi an.
+	* Square
+		Dieser ist der zweitschnellste Algorithmus in FU. Er spart Re-
+		chenzeit, in dem er quadratische Bereiche in der Grafik er-
+		kennt, ausfüllt und von der weiteren Berechnung ausschließt.
+	* Square+
+		Dies ist ein modifizierter Squarealgorithmus. Er ist noch
+		schneller hat aber manchmal Fehler. Beim Grundbild der Mandel-
+		brotmenge fehlen so z.B. die Spitzen in der Taille. Abhilfe
+		schafft hier ein Umschalten auf eine andere Methode und ein
+		Recalc aus dem Zoomfenster über den Bereich. Diese Fehler tre-
+		ten seltener auf, falls ein stark strukturiertes Insidemodell
+		gewählt wurde.
+	* Solid
+		Dies ist der herkömmliche Modus Fraktale zu berechnen. Er ar-
+		beitet zeilenweise den Bildschirm ab.
+	* Preview
+		Dieser Modus ist ähnlich wie Solid. Er gibt allerdings einen
+		sehr schnellen Überblick über die zu berechnende Grafik, indem
+		er zuerst Punkte wegläßt und diese in den nächsten Durchgängen
+		zeichnet.
+GFX
+	FU bietet ihnen die Möglichkeit auf interne Grafikroutienen zurückzu-
+	greifen. Dadurch wird der Bildaufbau beschleunigt.
+	* Turbo
+		Wenn Turbo angewählt wurde, werden die schnelleren Routienen be
+		nutzt. Bitte beachten Sie jedoch, daß es dadurch Konflikte mit
+		anderen Programmen geben kann. Wenn z.B. ein Requester auf dem
+		FU-Renderscreen geöffnet wird, zerstört dieser die darunterlie-
+		gende Grafik. Beachten Sie bitte weiterhin, daß diese mit vie-
+		len Grafikkarten nicht funktionieren.
+	* System
+		Diese Routienen sollten auf jedem Rechner ordentlich funktio-
+		nieren. Falls auch diese auf ihrer Grafikkarte nicht arbeiten,
+		bindet sich diese wahrscheinlich nicht sauber genug in das
+		System ein.
+
+Misc.-Bereich
+~~~~~~~~~~~~~
+ObStep
+	Wenn Sie Inspect anwählen und sich Orbitpfade zeichnen lassen, werden
+	diese farbig dargestellt. Hier können Sie einstellen, aller wieviel
+	Punkte die Farbe um eins erhöht werden soll. Eine Schrittweite von 0
+	bewirkt keine Farbänderung.
+Signal
+	Falls dieser Button aktiviert ist, ertönt am Ende der Berechnung ein
+	Signal und der Bildschirmrand blitzt auf.
+
+Palette-Bereich
+~~~~~~~~~~~~~~~
+Scl
+	Hiermit können Sie die Farbpalette weiterstrecken. Dies ist z.B. not-
+	wendig, wenn Farbänderung sehr rasch auf einander folgen. Dadurch gehen
+	feine Details verloren. Wenn man jetzt bei Scl "2" einträgt, werden im-
+	mer 2 Farben zu einer zusammengefaßt.
+Rev.
+	Falls eine Farbpalette in einem anderen Farbton endet als sie beginnt,
+	kann das zu starken Farbsprüngen führen. Um das zu verhindern, spiegelt
+	FU die Farbpalette, falls Sie dies hier einschalten.
+Map
+	Hier legen Sie fest, wie die Farbpalette aufgetragen wird. Dazu stehen
+	Ihnen folgende Varianten zur Verfügung.
+	* Linear
+		Hierbei werden die Einträge hintereinander aufgetragen.
+	* Rev. 1
+		Bei dieser Option werden die Einträge abwechselnd zugeordnet.
+	* Rev. 2
+		Bei diese Variation werden die Farben zusätzlich zu Rev. 1 ge-
+		spiegelt.
+	Bei den Reversed-Modi funktioniert allerdings das Dithering nicht rich-
+	tig.
+
+Parameter-Bereich
+~~~~~~~~~~~~~~~~~
+
+P1-P4
+	In diesen Gadgets können Sie, falls aktiviert, Parameter eingeben. Es
+	existieren für jeden Parameter zwei Gadgets, da die Parameter komplexe
+	Zahlen sind. In das erste Gadget ist der Realteil und in das zweite der
+	Imaginärteil einzutragen.
+P-Gadgets
+	Die "P"-Schalter neben den Parametern ermöglichen es, falls es sinnvoll
+	ist, den komplexen Parameter direkt aus einem Bild zu "picken". So
+	existieren z.B. unendlich viele Julia-Mengen. Eine jede dieser ist ei-
+	nem Punkt im "Apfelmännchen" zugeordnet. Ausgewählt wird eine solche
+	über den Parameter par1=c. Um diesen zu "picken" berechnet man die
+	Mandelbrot-Menge und wählt dann die Julia-Funktion an. Jetzt ist der
+	"P"-Schalter neben Parameter 1 aktiv. Wenn man diesen nun anklickt,
+	wird auf den Schirm mit der Grafik gewechselt. Dort klickt man auf den
+	entsprechenden Punkt und dessen Koordinaten werden in den Parameter
+	übernommen. Mit der Taste "H" b.z.w. "h" kann der Mauszeiger, falls er
+	Ihnen im Wege ist, an- b.z.w. abgeschalten werden und mit der Spacetas-
+	te kann zwischen der Original- und einer Graustufenpalette zur Kon-
+	trastverbesserung gewechselt werden.
+Fn1-Fn4
+	Manche Fraktale werden mit mathematischen Funktionen berechnet. Diese
+	sind variabel gehalten. So können sie bei einer solchen Formel auswäh-
+	len, welche Funktion benutzt werden soll. Folgende Funktionen stehen
+	derzeit zur Verfügung :
+		sin, cos, tan,
+		sinh, cosh, tanh,
+		log, exp,
+		abs,
+		real, imag, swap,
+		inv
+	Falls eine Formel alle 4 Funktionen benutzen würde, kämen Sie bei die-
+	ser Funktion auf 13^4=28 561 Variationen.
+Iter.
+	Hier geben Sie die Iterationstiefe an. Diese ist für die Genauigkeit
+	der Berechnungen verantwortlich. Eine höhere Iterationsanzahl ist vor
+	allem in den Randbereichen zwischen Menge und Nichtmenge erforderlich,
+	resultiert aber in einer längeren Berechnungsdauer.
+Bailout
+	Dies ist das Abbruchkriterium. Mit Hilfe dieses Grenzwertes entscheidet
+	FU, wann die Iteration abzubrechen ist. Dadurch wird die Grafik in In-
+	side-(nicht abgebrochen) und Outsidebereiche (abgebrochen) unterteilt.
+Mirrormode
+	Hier gilt Gleiches wie im Zoommenü.
+Reset
+	Mit diesem Schalter können die Defaultwerte wiederhergestellt werden.
+
+Description-Bereich
+~~~~~~~~~~~~~~~~~~~
+	In diesem Bereich bekommen Sie einige Informationen über die aktuelle
+	Funktion und die Bedeutung Ihrer Parameter ( falls vorhanden ).
+
+Colormodells-Bereich
+~~~~~~~~~~~~~~~~~~~~
+Insidemode
+	Hier wählen Sie den Algorithmus, nach dem die Mengenpunkte eingefärbt
+	werden. Die einzelnen Algorithmen stellen unterschiedliche Zusammen-
+	hänge dar. Flächen mit der selben Farbe, verhalten sich also unter dem
+	ausgewählten Gesichtspunkt gleich.
+Par.
+	Falls das jeweilige Modell Parameter benötigt, können dieser hier ein-
+	gestellt werden. Bei Aktivierung des Colormodells wird hier automatisch
+	der Defaultwert eingetragen. Da sich das zu untersuchende Verhalten oft
+	nur leicht ändert, dient ein Parameter meist zur Verstärkung der Farb-
+	änderung ( je mehr Farbe man verwendet desto größer mus der Wert sein).
+Outsidemode
+	Diese Algorithmen sind für alle Punkte der Nicht-Menge verantwortlich.
+Par.
+	Hier gilt gleiches jedoch für die Outsidemode.
+@endnode
+
+@node Project_Formula "1.2.4 Formula"
+
+1.2.4 Formula
+-------------
+
+In diesem Menü treffen Sie die Auswahl über die zu berechnende Formel. Dazu
+dienen die zwei Listviewgadgete, in dem die zur Verfügung stehenden Formelgrup-
+pen sowie Formeln aufgeführt sind. Klicken Sie auf eine Gruppe, wechselt die
+Liste in dem rechten Listviewgadget und Sie sehen die Funktionen der entspre-
+chenden Gruppe. Durch einen Klick auf eine Formel wählen Sie diese aus. In der
+Formulagruppe befinden sich alle Scriptformeln. Falls Sie während des Programm-
+ablaufes neue Formeln hinzugefügt haben, können Sie mit der Taste "R" das er-
+neute Einlesen der Liste veranlassen.
+@endnode
+
+@node Project_Screen "1.2.5 Screen"
+
+1.2.5 Screen
+------------
+
+Modes
+	In diesem Listviewgadget finden Sie alle Grafikauflösungen die FU auf
+	Ihrem System gefunden hat. FU sollte hier auch die Auflösungen Ihrer
+	Grafikkarte (falls vorhanden) anbieten, wenn diese sich sauber einbin-
+	det. Falls Sie mit einer Betriebssystemversion <3.0 arbeiten werden die
+	Farben auf 64 und die Palettebits auf 4 reduziert um Systemabstürze zu
+	vermeiden. Um den gewünschten Modus auszuwählen, klicken Sie ihn bitte
+	an.
+Oscan
+	Hiermit ist es möglich die Monitorrandbereiche mit zu nutzen. Dadurch
+	erhöht sich die Bildschirmauflösung, z.B.
+		Nominal	: 320x256= 81920 Pixel
+		TxtOscan: 362x282=102084 Pixel
+				   20164 Pixel mehr.
+	Es sind verschiedene Bereichseinstellungen möglich.
+Xres
+	Hier sehen Sie die aktuelle Anzahl an Pixeln für die X-Achse. Diesen
+	Wert können Sie auch manuell höher setzen. Dann wird der Render-Screen
+	als Autoscrollscreen geöffnet, d.h. sobald Sie mit der Maus an den
+	Bildrand stoßen, rollt das Bild mit. Die Screens können theorethisch
+	mehrere Tausend Pixel breit und hoch sein, die Größe des ChipRAM's
+	setzt hier jedoch Grenzen.
+Yres
+	Equivalent zur X-Achse wird hier die Anzahl der Pixel für die Y-Achse
+	angegeben. Auch hier sind größere Werte möglich.
+Palbits
+	Die Palette-Bits werden rein informativ angezeigt und sagen Ihnen wie
+	feine Farbschattierungen Ihnen zur Verfügung stehen. Unter Kickstart 2.0
+	finden Sie hier Werte wie "2" oder "4". Ab Kickstart 3.0 sind höhere
+	Werte möglich.
+	Folgeden Bedeutung haben die einzelnen Werte :
+		2	=>   64 Farbabstufungen
+		4	=> 4096 Farbabstufungen
+		8	=> 16.8 Millionen Farbabstufungen
+Color-Slider
+	Mit diesem Schieberegler stellen Sie die Farbenanzahl ein, die verwen-
+	det werden soll. Die Skala ist wie folgt aufgebaut :
+		2, 4, 8, 16, 32, 64, 128 und 256.
+	Der maximale Wert richtet sich nach den Grafikfähigkeiten Ihres	Rech-
+	ners.
+@endnode
+
+@node Project_DiskOp "1.2.6 DiskOp."
+
+1.2.6 DiskOp.
+-------------
+
+Load
+	Hiermit kann ein mit FU berechnetes Bild geladen und damit weitergear-
+	beitet werden. Nach dem Klick auf "Load" erscheint ein Dateirequester,
+	in dem Sie den Namen des Bildes eingeben können. Bedenken Sie bitte,
+	daß Sie nur Bilder einladen können, die zwischenzeitlich nirgendwo be-
+	arbeitet worden sind. FU speichert zusätzliche Informationen in einem
+	Extrachunk und diese gehen verloren, wenn man das Bild z.B. in einem
+	Malprogramm einläd und wieder abspeichert.
+Save
+	Durch einen Klick auf "Save" erscheint ein Dateirequester, in dem Sie
+	den Namen der Datei eingeben können. Diese wird dann im IFF-Format ge-
+	speichert, d.h. die Bilder können mit anderen Programmen geladen
+	werden. Wenn Sie z.B. eine Fraktalgrafik ausdrucken wollen, laden Sie
+	diese in Ihr Zeichenprogramm ein und drucken Sie aus. FU speichert wei-
+	terhin einige Informationen in der Filenote des Bildes. So z.B.	Grafik-
+	auflösung und Farbtiefe, sowie die Zeit (in Std:Min:Sec), die die Be-
+	rechnung des Bildes benötigte. Außerdem werden die Colorcyclingdaten
+	mit gespeichert, so daß der Farbdurchlauf auch in verschiedenen Grafik-
+	und Bildanzeigeprogrammen funktionieren sollte (z.b. DPaint, Bril-
+	liance, Bildanzeiger von DOpus, ...).
+Savemode
+	Hiermit wählen Sie folgende verschiedene Speichermodi aus :
+	* IFF+Data
+		Hier werden die Bitmap-, Color- und Berechnungsdaten gespei-
+		chert. Die zusätzlichen Daten sollten von anderen Programmen
+		ignoriert werden und so die Weiterverwendung nicht behindern.
+		Nach dem Einladen des Bildes in FU, kann mit diesem weiterge-
+		arbeitet werden, z.B. kann man hineinzoomen oder auch einige
+		Parameter verändern und das Bild neu berechnen.
+	* IFF
+		Hier werden nur die Bitmap- und Colordaten gesichert. Ein sol-
+		ches Bild kann nicht mehr in FU eingeladen werden, da das Pro-
+		gramm so nicht weiß, mit welcher Formel das Bild berechnet
+		wurde und welche Koordinaten als Grundlage dienten.
+	* Data
+		Bei dieser Option speichert FU nur die Berechnungsdaten. Diese
+		Dateien sind sehr kurz und ermöglichen es Ihnen sehr viele Bil-
+		der zu berechnen und diese an andere FU-Benutzer weiterzugeben
+		(auch via DFÜ). Diese Datenchunks werden dann eingeladen und
+		mit einem Klick auf "Render" neu berechnet.
+@endnode
+
+@node Project_Prefs "1.2.7 Prefs"
+
+1.2.7 Prefs
+-----------
+
+Prefs :
+	Okay		"Okay" speichert die aktuellen Einstellungen im ENV:-
+			Verzeichnis, worauf sie solange aktiv sind, wie der
+			Rechner angeschalten ist. "Okay" verläßt die Prefs.
+	Cancel		Hiermit verlassen Sie die Preferences und aktivieren
+			wieder die Einstellungen vor dem Öffnen des Fensters
+	Save		"Save" speichert im ENV:- und im ENVARC:-Verzeichnis.
+			So sind die Einstellungen dauerhaft gesichert. Auch
+			"Save" verläßt das Prefs-Fenster.
+	Load		Dieser Knopf veranlaßt das Laden der Einstellungen aus
+			dem ENV:-Verzeichnis.
+Dateipfade :
+	Pictures	Hier kann der Default-Pfad für die Bilder eingetragen
+			werden bzw. durch einen Klick auf das PopUp-Symbol aus-
+			gewählt werden.
+	Palettes	dito für Farbpaletten-Dateien
+
+Palette :
+	Palette		Hier wählen Sie den zu ändernden Paletteneintrag aus.
+	Red,Green,Blue	Mit diesen Gadgets können sie die Farbanteile des ge-
+			wählten Eintrages ändern.
+
+GUI :
+	Screen		Im nachfolgenden Auswahlfenster können Sie eine Bild-
+			schirmauflösung auswählen, wobei nur für SoundFX geeig-
+			neten Modi angezeigt werden.
+	Font		Hier können Sie einen Schriftsatz auswählen. Zur Aus-
+			wahl stehen nur nichtproportionale Schriften. Verwenden
+			Sie bitte keine Zeichensätze >8 Pixel, wenn Sie keine
+			entsprechende Bildschirmauflösung gewählt haben.
+			Falls es trtzdem etwas eng auf Ihrem Schirm wird, es
+			wird ein Font ("TriSonimie21") mitgeliefer, der nur 6
+			Pixel groß ist und somit mehr Platz schafft.
+	Änderungen von Bilschirmauflösungen unf Schriftarten werden zur Zeit
+	erst nach erneutem Programmstart wirkssam.
+@endnode
+
+@node Project_About "1.2.8 About"
+
+1.2.8 About
+-----------
+
+Hier werden Ihnen die Programmversion und die Credits angezeigt. Mit "Okay"
+verlassen Sie das Informationsfenster.
+@endnode
+
+@node Project_Exit "1.2.9 Exit"
+
+1.2.9 Exit
+----------
+
+Hiermit können Sie das Programm verlassen. Nach einem Klick auf diesen Schalter
+erscheint ein Sicherheitsrequester, um unbeabsichtigtes Verlassen des Programms
+zu verhindern.
+@endnode
+
+@node Control_Render "1.3.1 Render"
+
+1.2.1 Render
+------------
+
+Dieser Knopf dient dem Start der Berechnung. Nach dem Betätigen schaltet FU den
+Grafikbildschirm nach vorne, auf dem Sie die Generierung des Bildes verfolgen
+können. Die Berechnung kann mit der "ESC"-Taste abgebrochen werden. Weiterhin
+können Sie mit den Tasten "1"-"0" die einzelnen Farbpaletten umschalten. Mit
+der Taste "H" oder "h" können Sie den Mauszeiger aus- und anschalten. Wenn FU
+mit der Berechnung fertig ist ruft das Programm die View-Funktion auf.
+@endnode
+
+@node Control_View "1.3.2 View"
+
+1.3.2 View
+----------
+
+Diese Funktion ist erst anwählbar, wenn eine Grafik berechnet wurde (@{" Render " link Control_Render}).
+Mit ihr wechseln Sie auf den Ausgabebildschirm. Hier stehen Ihnen mehrere Tas-
+taturfunktionen zur Verfügung, die folgend aufgeführt sind :
+* "ESC"-Taste oder Maustaste
+	Damit wechseln Sie auf den FU-Hauptscreen zurück.
+* Tasten "1"-"0"
+	Diese Tasten dienen dem Wechseln der Farbpaletten.
+* Space oder Tab
+	Hiermit können Sie das Colorcycling ( zyklischer Farbdurchlauf ) an-
+	bzw. ausschalten.
+* Cursor nach oben
+	Geschwindigkeit des Farbdurchlaufs erhöhen.
+* Cursor nach unten
+	Geschwindigkeit des Farbdurchlaufs absenken.
+* Cursor rechts / links
+	Richtung des Farbdurchlaufes ändern.
+* Zehnertastatur ( außer 5 ) b.z.w. Joystick
+	Scrolling des Bildes in die jeweilige Richtung. Damit kann der gezoomte
+	Ausschnitt nachjustiert werden. Der neue Teil muß dabei neuberechnet
+	werden.
+* Taste "H" oder "h"
+	Aus- bzw. Anschalten des Mauszeigers
+* Joystick bzw. Zifferntasten des Zahlenblocks
+	Scrollen der Grafik. Manchmal hat man den Ausschnitt nicht so perfekt
+	getroffen. Hiermit kann das Bild verschoben werden, wobei die Kanten
+	ständig neu berechnet werden.
+@endnode
+
+@node Control_Inspect "1.3.3 Inspect"
+
+1.3.3 Inspect
+-------------
+
+Auch diese Funktion ist erst aktivierbar, wenn eine berechnete Grafik vorliegt.
+Sie gibt Ihnen die Möglichkeit ein Bild genauer zu untersuchen. Dazu wechselt
+FU auf den Schirm mit der Grafik und öffnet folgende zwei Informationsfenster
+die verschiebbar sind. Diese zeigen einige Werte für den Punkt unter dem Maus-
+zeiger bei gedrückter linker Maustaste an.
+* Inspect
+	Hier werden folgende Werte numerisch dargestellt.
+	SX und SY :	Bildschirm-X und -Y Koordinaten.
+	X und Y   :	Koordinaten in der komplexen Zahlenebene.
+	Col       :	Wert der die Grundlage für die Farbbestimmung bildete.
+	Das Fenster wird immer in der linken unteren Bildschirmecke geöffnet.
+* Orbit
+	In diesem Fenster wird der Orbit des Punktes dargestellt. Dabei paßt
+	sich die Scalierung und der Offset der Orbitbahn ständig an, so daß Sie
+	immer den nahezu optimalen Bereich sehen. Berechnen Sie z.B. einmal das
+	Grundbild der Mandelbrot-Menge und rufen dann Inspect auf. Hier fahren
+	Sie mit gedrückter linker Maustaste die Menge (dunkle einfarbige Flä-
+	che) ab. Dabei werden im Orbit-Fenster sehr komplexe Punktewolken
+	sichtbar.
+	Das Orbitfenster paßt sich automatisch an die Displaygröße an und wird
+	in der rechten unteren Ecke geöffnet.
+	Auch hier stehen Ihnen verschiedene Tastaturkommandos zur Verfügung. 
+	Diese gleichen denen bei "View". Farbcycling ist hier allerdings nicht
+	möglich (und auch nicht notwendig).
+@endnode
+
+@node Formulas_Einführung "2.1 Einführung"
+
+2.1 Einführung
+--------------
+
+In diesem Kapitel werde ich versuch zu erklären wie ein Fractal berechnet wird.
+Es wird allerdings nur eine kurze Einführung sein, da das Thema komplex genug
+ist um damit mehrere Bücher zu füllen.
+
+Fraktale sind die grafische Darstellung des Kurvenvelaufes einer komplexen
+Funktion.
+Bei einer reellen Funktion (z.B. Sinus) erhält man für jedes reelles Argument
+ein Ergebnis, welches sich dann wie folg darstellen läßt :
+	y ^  __
+	  | /  \
+	  |+----+----+---->
+	  |      \__/     x
+
+Wenn man mit komplexen Zahlen rechnet, dann kann man sich eine solche Zahl gut
+als Koordinate vorstellen. Die X-Achse entspricht den reelen Zahlen und die Y-
+Achse den imaginären Zahlen. So besteht also jede komplexe Zahl aus realem und
+imaginären Anteil.
+
+Um den Graphen einer solchen Funktion zu berechnen, muß man nicht nur für ver-
+schiedene X-Werte die Ergebnisse berechnen, sonder für X-Y-Paare. Der Ergebnis-
+werte wiederum wird dann als Farbton dargestellt.
+
+Kommen wir nun zu einem konkreten Beispiel - der Mandelbrotmenge :
+Die Formel für dieses Fraktal ist z:=z^2+c
+Eine solche Funktion wird iterativ (in einer Schleife) berechnet. Das sieht
+dann folgendermaßen aus (C-Pseudocode):
+
+	PunktBerechnen(complex pixel)			// Koordinaten des zu berechnenden Punktes
+	{
+		complex z,c;				// Arbeitsvariablen
+		int i,color;
+
+		z=c=pixel;				// mit Koordinaten initialisieren
+		color=0;				// Farbe auf Null setzen
+
+		for(i=0;i<100;i=i+1)			// Schleife max. 100 mal ausführen
+		{
+			z=z*z+c;			// neues z berechnen
+			if(abs(z)>2.0)			// wenn z weiter als 2.0 Einheiten vom
+			{				// Nullpunkt entfernt ist, dann abbrechen
+				color=i;		// und Schritt merken. Nummer des Schrittes
+				i=100;			// entspricht Nummer der Farbe des Punktes
+			}
+		}
+		return(color);
+	}
+
+Wenn also ein Punkt berechnet werden soll, wird die Formel immer wieder durch-
+gerechnet und das Ergebnis des letzten Durchganges dient als Grundlage für den
+Nächsten. Während der Berechnung erhält man also eine Folge von Zwischenergeb-
+nissen. Diese kann entweder :
+	* gegen einen Punkt fallen
+	* zwischen mehreren Punkten hin- und herspringen (Zyklus)
+	* oder gegen Unendlich streben.
+In den ersten zwei Fällen gehört der Punkt zur Mandelbrot-Menge, sonst nicht.
+Mit FU können Sie die Mengen- und Nichtmengenpunkte nach unterschiedlichen Ge-
+sichtspunkten einfärben. Dadurch werden die unterschiedlichsten Zusammenhänge
+im Verhalten der Fraktale sichtbar.
+@endnode
+
+@node Formulas_Circle "2.2 InvCircle / NormCircle"
+
+2.2 InvCircle / NormCircle
+--------------------------
+
+Die Fraktale dieser Gruppe sind eigentlich keine Fraktale. Diese Bilder entste-
+hen nicht in einem iterativen Prozeß. Wenn man Details vergrößert verschwinden
+diese manchmal und neue tauchen auf. Diese Bilder entstehen durch komplexe
+Überlagerungen verschiedener Wellen. Auch die Auswahl verschiedener Inside- und
+Outsidemodelle hat hier keinen Einfluß. "Inv" steht für Inverse und bedeutet,
+daß anstatt Pixel 1/Pixel für die Punktberechnung übergeben wird. Der Bailout-
+Wert wird als Vergrößerungsfaktor zweckentfremdet.
+@endnode
+
+@node Formulas_Formula "2.3 Formula"
+
+2.3 Formula
+-----------
+
+Unter dieser Gruppe werden alle Formeln in Scriptform zusammengefaßt. FU gibt
+Ihnen nämlich die Möglichkeit eigenen Formeln in einer MiniProgrammiersprache
+zu schreiben und zu erforschen. Dazu müssen Sie in Ihrem Lieblingseditor die
+Formel eingeben, wobei Sie folgende Aufbauregeln beachten müssen :
+
+Name z.B. Mandel
+{
+	{
+		Block 1:
+		Standartwerte
+		Initialisierung für das komplette Bild
+	}
+	{
+		Block 2:
+		Initialisierungsteil für jeden Punkt
+	}
+	{
+		Block 3:
+		iterative Rechenvorschrift
+	}
+	{
+		Block 4:
+		Abbruchbedingung
+	}
+	{
+		Block 5:
+		Kommentarteil
+	}
+}
+
+Allgemeine Regeln :
+Es darf nur jeweils eine Operation pro Zeile erfolgen. Kommentarzeilen beginnen
+mit ";" ( unbedingt in der 1. Spalte ). Weiterhin können Kommentare in jeder
+Anweisungszeile stehen, sie müssen allerdings wiederum mit ";" beginnen. Der
+Name der Formel muß mit dem Filenamen (ohne Erweiterung) übereinstimmen.
+
+Block 1:
+Hier stehen Ihnen folgende Schlüsselwörter zur Verfügung :
+* mirrorx, mirrory, mirrorxy, mirroryx :
+	Falls der Graph der Funktion an einer oder an beiden Achse(n) gespie-
+	gelt ist geben Sie das entsprechende Schlüsselwort an.
+* x1, y1, x2, y2 :
+	Hier stellen Sie den Grundbereich des Funktionsgraphen ein. z.B.
+	x1=-2.0
+	y1=-1.35
+	x2=1.0
+	y2=1.35
+* par1.r, par1.i, ..., par4.r, par4.i :
+	Mit diesen Wörter legen Sie die Standartwerte der Parameter fest. z.B.
+	par1.r=4.0
+	par1.i=-0.5
+* fn1, ..., fn4 :
+	Zusätzlich zu den eingebauten mathematischen Funktionen stehen Ihnen
+	4 variable Funktionen fn1()-fn4() zur Verfügung. Mit diesen Variablen
+	weisen Sie die Standartfunktionen zu. Zur Zeit sind folgende Funktionen
+	vorhanden :
+	0=sin, 1=cos, 2=tan
+	3=sinh, 4=cosh, 5=tanh
+	6=log
+	7=exp
+	8=abs (berechnet die Entfernung zum Punkt [0.0,0.0] und gibt das Ergeb-
+	       nis als reale Zahl zurück)
+	9=real (gibt den Realanteil zurück)
+	10=imag (gibt den Imaginäranteil zurück)
+	11=swap (vertauscht die Real- und Imaginäranteile)
+	12=inv (Reziprokwert).
+	Eine solche Zuweisung sieht z.B. so aus : fn1=2 oder fn1=tan.
+* pickendi ( Pick Enable / Disable )
+	Diese Variable ist ein Bitfeld, aus welchem FU entnimmt welche Parame-
+	ter mit der "Pick"-Funktion aus dem Optionsfenster ermittelt werden
+	können. 
+	Par1=>1, Par2=>2, Par3=>4, Par4=>8
+	Wenn also Par1 und Par3 mit der "Pick"-Funktion verändert werden können
+	sollen, so schreiben Sie pickendi=5 ( nämlich 1+4 ).
+
+Block 2 und Block 3 :
+Hier stehen die Rechenvorschriften für den Initblock (Block 2) und den iterativ
+abzuarbeitenden Block (Block 3). Beide sind syntaktisch gleich aufgebaut.
+Beachten Sie bitte das Sie nur eine Operation pro Zeil durchführen können, d.h.
+wenn Sie a=(b*c+sin(d))/e rechnen möchten, so schreiben Sie dafür bitte :
+	a=b*c
+	temp=sin(d)
+	a=a+temp
+	a=a/e
+Diese Beschränkung ist nicht so schlimm, wie es erst scheinen mag. Die meisten
+Formeln sind so einfach, das man sie mit 3-4 Zeilen beschreiben kann. Für FU
+ist es allerdings wesentlich einfacher solche Ausdrücke auszuwerten.
+* Variablen :
+	pixel :	beihaltet den Initorbit (also die Koordinaten des zu berechnen-
+		den Punktes).
+	par1, ..., par4 : beinhalten die jeweiligen Parameter.
+	Weitere Variablen können Sie selbst definieren, indem Sie diese einfach
+	auf der linken Seite einer Zuweisung benutzen. "z=pixel" würde also
+	eine neue Variable "z" schaffen, falls diese noch nicht existiert. Der
+	Variablenname kann maximal 10 Zeichen lang sein, wobei Buchstaben und
+	Zahlen genutzt werden können. Verwenden Sie bitte keine Variablennamen
+	der Form "Fra???", wobei "???" eine 3-stellige Nummer ist, da diese
+	Variablen für interne Zwecke benötigt werden.
+* Konstanten :
+	Wenn Sie im Algorithmus z.B. z mit der komplexen Zahl 2.0+1.5i multip-
+	lizieren möchten, so schreiben Sie z=z*[2.0,1.5]. Jede Konstante in der
+	Form a+bi wird in FU also als [a,b] geschrieben.
+* Funktionen :
+	FU stellt Ihnen folgende Funktionen zum Einbau in Ihre Formeln zur Ver-
+	fügung :
+	sin, cos, tan, sinh, cosh, tanh : trigonometrische Funktionen
+	exp : Exponentialfunktion
+	log : Logarithmus
+	abs : absoluter Betrag ( Achtung : Imaginäranteil=0 )
+	real, imag : Läßt nur den jeweiligen Anteil der komplexen Zahl übrig
+		(imag([2.0,-1.5])=[0.0,-1.5])
+	swap : Vertauscht den Imaginär- und den Realanteil
+	inv : bildet den Reziprokewert
+	Verwendet werden diese Funktionen wie folgt :
+	w=sin(z) berechnet den sin von z und speichert das Ergebnis in w
+	w=real(w) löscht den imaginären Anteil von w
+*Mathematische Operationen :
+	Es stehen ihnen +, -, *, / und ^ (Potenzfunktion) zur Verfügung.
+
+Block 4 :
+In diesem Block entscheiden Sie, bei welcher Tatsache FU die Iterationen ab-
+brechen soll. Beachten Sie bitte, daß nur die absolute Beträge von Zahlen 
+verglichen werden können. Beispiele für Abbruchbedingungen wären :
+	w<bailout oder
+	w>=q,
+wobei w,q die absoluten Beträge von Variablen sein sollten, das nur die Real-
+anteile verglichen werden.
+
+Block 5 :
+Dieser Block dient der Aufnahme von 5 Textzeilen, die im Descriptionfeld (Op-
+tions / Formula-Fenster) angezeigt werden. Die erste Zeile beinhaltet den Namen
+der Formel, und die weiteren 4 Zeilen die Erklärung für die einzelnen Parameter
+par1...par4. Unbenutzte Parameter benötigen keine Erklärung.
+
+Schauen Sie sich am Besten mehrere der mitgelieferten Dateien an und experimen-
+tieren Sie mit eigenen Ideen. Zum Berechnen eignet sich der Preview-Algorithmus
+sehr gut, da Sie hier einen schnellen Überblick bekommen, ob das Bild interes-
+sant werden könnte.
+@endnode
+
+@node Formulas_Newton "2.4 InvNewton / NormNewton"
+
+2.4 InvNewton / NormNewton
+--------------------------
+
+Diese Fraktale basieren auf einem modifizierten Newtonverfahren zur Nullstel-
+lenberechnung. Gegeben ist hier eine Funktion z.B. f(z)=z3-1 die in folgendes
+Schema eingesetzt wird :
+		            f(z)
+		z=z-par1*----------
+		         f'(z)+par2
+
+und iterativ gelöst wird. Auch hier gibt es zwei Gruppen "InvNewton" und "Norm-
+Newton", wobei "Inv" wieder für die Initialisierung mit dem Reziprokwert des
+Pixels steht.
+@endnode
+
+@node Formulas_PlaneC "2.5 Inv/Norm-, Var/Fix-PlaneC"
+
+2.5 Inv/Norm-, Var/Fix-PlaneC
+-----------------------------
+
+"Inv" und "Norm" unterscheiden sich dadurch, daß der zu berechnende Punkt nor-
+mal bzw. invertiert übergeben wird.
+Bei den Formeln diesen Types existiert ein Parameter "C". Je nach dem, ob die-
+ser für das ganze Bild konstant=fix (und damit als Parameter einstellbar) ist
+oder variabel=var ist (und damit von FU selbst variiert wird), wird die Funk-
+tion in eine der beiden Gruppen (Var/Fix) eingeordnet.
+In der Gruppe NormVarPlaneC finden sie z.B. das bekannte Apfelmänchen und in
+der Gruppe NormFixPlaneC die Julia-Menge.
+@endnode
+
+@node Charpter5.1 "5.1 Aussichten"
+
+5.1 Aussichten
+--------------
+
+Folgende Funktionen und Features sind geplant bzw. in Arbeit.
+	* richtiges Animationsmodul mit folgenden Features
+		* Liste mit beliebig vielen Keyframes
+		* jeder Parameter in FU kann zwischen zwei Keyframes überge-
+		  blendet werden (Linear,SpeedUp,SlowDown)
+	* Verbesserungen bei der Orbitdarstellung
+	* neue Inside-/OutsideModelle
+	* Verbesserungen Oberfläche / Bedienung
+	* ausgebauter Arexx-Port
+	* Lokalisation (??? macht viel Arbeit)
+Für Anregungen, Kritik usw. bin ich jederzeit dankbar.
+@endnode
+
+@node Charpter5.2 "5.2 Danksagung"
+
+5.2 Danksagung
+--------------
+
+Ich danke allen die mir das Schreiben dieses Programmes ermöglichten oder mir
+irgendwie dabei halfen.
+@endnode
+
+@node Charpter5.4 "5.4 History"
+
+5.4 History
+-----------
+
+V 0.0	01.03.1994
+Idee
+
+V 1.2	01.05.1994
+- 1. Version - noch sehr unflexibel (nur 2 Puffer)
+
+V 2.0	25.06.1994
+- etwas verbesserte Benutzerführung (10 Puffer)
+- mehr Effekte
+
+V 3.0	20.02.1995
+- völlig neu programmierte Oberfläche (fontsensitiv/screenmodesensitiv)
+- beliebig viele Pufferfenster
+- mehr FX/Player/Loader/Saver
+- viele FX zusammengefaßt
+- ARexx-Port
+
+V 3.1	23.06.1995
+- neues Windowsystem - jetzt wirklich sehr viel Fenster möglich
+- Erweiterung des ARexx-Ports
+- neue Playroutinen 14bit,Interruptplayer,Playpos.balken
+
+@endnode
+
+@node Charpter5.5 "5.5 Werbung"
+
+5.5 Werbung
+-----------
+
+Folgende meiner Programme sind ebenfalls erhältlich.:
+
+SoundFX
+	* Sampleconverter,-generator,-effektsoftware
+	* ca. 50 Effekte mit vielen Möglichkeiten
+	* wandelt viele Formate
+		(IFF-8SVX,IFF-16SV,RAW,RIFF-WAV,VOC,SUN/NEXT,AIFF/AIFC,...)
+	* kann mit vielen Samples gleichzeitig arbeiten
+		(jedes Sample hat sein eigenes vergrößerbares fenster)
+	* arbeitet in mono,stereo,quadro
+	* kann Samples in 14bit mit dem normalen Paula-Chip abspielen
+	* und vielen weiteren Features (guide lesen !)
+CacheControl
+	* kleines Tool mit fontsensitiver Öberfläche als Prefsprogramm für
+	  Prozessorflags.
+VSort
+	* stellt 8 Sortierprozesse grafisch dar
+	* sieht ganz interessant aus
+LED
+	* Miniprogi zum Lesen/Setzen/Toggeln der PowerLED und damit des Hard-
+	  warefilters.
+EdWin
+	* MiniShelltool zum ändern der Position und der Größe des aktuellen
+	  Shellfensters.
+	* ganz nützlich in Batchdateien
+HiScan
+	* aktiviert Sampleplaybackraten >28000 Hz
+	* Nur für Leute mit Multiscanmonitor
+@endnode

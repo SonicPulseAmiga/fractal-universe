@@ -1,0 +1,31 @@
+MarksMandelPower
+{
+	{
+		mirrorx
+		x1=-2.0
+		x2= 2.0
+		y1=-1.75
+		y2= 1.75
+		par1.r=0.5
+		par1.i=0.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c=pixel
+		s=par1
+		c=c-s
+		c=pow(z,c)
+	}
+	{
+		z=z*z
+		z=c*z
+		z=z+pixel
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

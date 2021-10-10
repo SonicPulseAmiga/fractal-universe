@@ -1,0 +1,32 @@
+RAZZIA
+{
+	{
+		x1=-2.0
+		x2= 2.0
+		y1=-1.75
+		y2= 1.75
+		par1.r=0.3
+		par1.i=0.0
+		par2.r=3.0
+		par2.i=0.0
+		bailout=4.0
+	}
+	{
+		z=pixel
+	}
+	{
+		t=par1/z
+		u=z
+		z=pow(z,par2)
+		z=z-t
+		z=z+u
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-Divisor for t
+		PAR2-Potenz of z
+	}
+}

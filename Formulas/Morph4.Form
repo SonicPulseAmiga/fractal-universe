@@ -1,0 +1,35 @@
+Morph4
+{
+	{
+		x1=-2.5
+		x2= 2.5
+		y1=-2.0
+		y2= 2.0
+		par1.r=-0.1
+		par1.i=0.0
+		par2.r=2.0
+		par2.i=0
+		bailout=4.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		zold=z
+		z=pow(z,par2)
+		zold=zold*z
+		z=z+c
+		t=zold/z
+		t=t*par1
+		c=c+t
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-MORPH FACTOR
+		PAR2-POTENZ OF Z
+	}
+}

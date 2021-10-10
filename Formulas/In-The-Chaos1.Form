@@ -1,0 +1,24 @@
+In-The-Chaos1
+{
+	{
+		x1=-4.0
+		x2= 4.0
+		y1=-4.0
+		y2= 4.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		t=cos(z)
+		w=cos(t)
+	}
+	{
+		w>t
+	}
+	{
+	}
+}

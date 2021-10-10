@@ -1,0 +1,52 @@
+Speedcomparision
+----------------
+
+Test 1 :
+	Screen  :	Lowres		320 x 256 x 32 Colors
+	Formula :	Mandelbrotmenge
+	Zoom	:	-2.0 ... 1.0  -1.35 ... 1.35
+	Iter.	:	50
+Test 2 :
+	Screen	:	HiresLaced	640 x 512 x 16 Colors
+	Formula :	Mandelbrotmenge
+	Zoom	:	-2.0 ... 1.0  -1.35 ... 1.35
+	Iter.	:	150
+
+* System: A2000/GForce030+882/50Mhz
+
+Programmname | Render-  | Prec.   | Test 1 | Test 2 | Bemerkung 
+             | modus    |         |        |        |
+-------------+----------+---------+--------+--------+------------------------------------------
+FractalUniv. | Square   | Float   |   0:17 |   1:33 |
+FractalUniv. | Square+  | Float   |   0:12 |   0:56 |
+FractalUniv. | Square   | Integer |   0:15 |   1:24 |
+FractalUniv. | Square+  | Integer |   0:11 |   0:50 |
+-------------+----------+-------- +--------+--------+
+Fractint     | Tesseral | Float   |   0:24 |   0:39 |
+Fractint     | Tesseral | Integer |   0:09 |   1:36 |
+-------------+----------+---------+--------+--------+------------------------------------------+
+MandelMania  | Solid    | Integer |   0:02 |   0:35 | die nachfolgenden Programme können aller-|
+-------------+----------+---------+--------+--------+ dings nur wenige Fomeln berechen und     |
+Mand2000     | Solid    | Integer |        |   0:09 | unterstützen keine In-/Outsidemodelle.   |
+-------------+----------+---------+--------+--------+
+MandelBlitz  | Boundary | Float   |        |   8:23 |
+MandelBlitz  | Boundary | Integer |        |   6:50 |
+-------------+----------+---------+--------+--------+
+
+* System: A4000/040/30Mhz
+
+Programmname | Render-  | Prec.   | Test 1 | Test 2 | Bemerkung 
+             | modus    |         |        |        |
+-------------+----------+---------+--------+--------+------------------------------------------
+FractalUniv. | Square   | Float   |   0:06 |   1:33 |
+FractalUniv. | Square+  | Float   |   0:04 |   0:56 |
+FractalUniv. | Square   | Integer |   0:15 |   1:24 |
+FractalUniv. | Square+  | Integer |   0:11 |   0:50 |
+-------------+----------+-------- +--------+--------+
+Fractint     | Tesseral | Float   |   0:04 |   0:11 |
+Fractint     | Tesseral | Integer |   0:07 |   0:31 |
+-------------+----------+---------+--------+--------+------------------------------------------+
+MandelMania  | Solid    | Integer |   0:01 |   0:05 | die nachfolgenden Programme können aller-|
+-------------+----------+---------+--------+--------+ dings nur wenige Fomeln berechen und     |
+Mand2000     | Solid    | Integer |        |   0:04 | unterstützen keine In-/Outsidemodelle.   |
+-------------+----------+---------+--------+--------+

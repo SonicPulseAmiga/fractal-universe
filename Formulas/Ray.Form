@@ -1,0 +1,29 @@
+Ray
+{
+	{
+		mirrorx
+		x1=-5.0
+		x2= 5.0
+		y1=-5.0
+		y2= 5.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		g=z*c
+		f=log(z)
+		h=pow([2.0,0.0],g)
+		z=pow(h,f)
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

@@ -1,0 +1,9 @@
+echo [32m»» making the 68060-881-Version ...[31m
+copy sc_makefiles/makefile.fpu			makefile
+copy sc_options/scoptions.68060-881g	scoptions
+delete fu.gst
+sc allincludes.c
+copy sc_options/scoptions.68060-881		scoptions
+delete >NIL: #?.o
+smake
+copy fu									sc_versions/fu.68060-881

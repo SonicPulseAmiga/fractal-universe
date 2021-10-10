@@ -1,0 +1,31 @@
+Newton1
+{
+	{
+		x1=-2.0
+		x2= 2.0
+		y1=-1.6
+		y2= 1.6
+		par1.r=4.0
+		par1.i=0.0
+		bailout=0.000001
+	}
+	{
+		t=par1-[1.0,0.0]
+		z=pixel
+	}
+	{
+		zu=z^t
+		zo=zu*z
+		zo=zo-[1.0,0.0]
+		zu=zu*par1
+		x=zo/zu
+		z=z-x
+		w=abs(zo)
+	}
+	{
+		w<bailout
+	}
+	{
+		par1 : exponent
+	}
+}

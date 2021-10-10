@@ -1,0 +1,32 @@
+Tri28
+{
+	{
+		mirrorxy
+		x1=-4.0
+		x2= 4.0
+		y1=-4.0
+		y2= 4.0
+		bailout=2.0
+	}
+	{
+		pixel=cos(pixel)
+		pixel=tan(pixel)
+		pixel=log(pixel)
+		pixel=cos(pixel)
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*c
+		r=sin(z)
+		z=r*r
+		z=c/z
+		z=z+c
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

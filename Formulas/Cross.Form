@@ -1,0 +1,28 @@
+Cross
+{
+	{
+		mirrorxy
+		x1=-12.0
+		x2= 12.0
+		y1=-12.0
+		y2= 12.0
+		bailout=2.0
+	}
+	{
+		c=pixel
+		z=pixel
+	}
+	{
+		z=z*z
+		z=log(z)
+		f=sin(c)
+		z=z*f
+		z=sin(z)
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+	}
+}

@@ -1,0 +1,35 @@
+Angel
+{
+	{
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		par1.r=0.5
+		par1.i=0.0
+		par2.r=0.05
+		par2.i=0.0
+	}
+	{
+		z=pixel
+		c=pixel
+	}
+	{
+		z=z*z
+		z=z+c
+		z=z+z
+		c=c*c
+		c=c+z
+		c=c+par2
+		w1=abs(z)
+		w1=w1*par1
+		w2=abs(c)
+	}
+	{
+		w1>w2
+	}
+	{
+		PAR1-MULTIPLICATOR OF Z
+		PAR2-SUMMAND TO C
+	}
+}

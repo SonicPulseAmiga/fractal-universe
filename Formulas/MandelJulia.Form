@@ -1,0 +1,34 @@
+MandelJulia
+{
+	{
+		x1=-2.0
+		x2= 2.0
+		y1=-2.0
+		y2= 2.0
+		par1.r=-0.75
+		par1.i=0.2
+		par2.r=0.05
+		par2.i=0.0
+		bailout=4.0
+	}
+	{
+		zm=pixel
+		zj=pixel
+		cm=pixel
+		cj=par1
+	}
+	{
+		zm=zm*zm
+		zm=zm+cm
+		zj=zj*zj
+		zj=zj+cj
+		w1=abs(zm)
+		w1=w1*par2
+		w2=abs(zj)
+	}
+	{
+		w1>w2
+	}
+	{
+	}
+}

@@ -1,0 +1,42 @@
+Mandelmix
+{
+	{
+		x1=-2.5
+		x2= 2.5
+		y1=-2.0
+		y2= 2.0
+		par1.r=0.27334
+		par1.i=0.02342
+		par2.r=-0.184
+		par2.i=0.6557
+		par3.r=0.28334
+		par3.i=0.02342
+		par4.r=-0.174
+		par4.i=0.6557
+		bailout=4.0
+	}
+	{
+		z=pixel
+		c1=pixel+par1
+		c2=pixel+par2
+		c3=pixel+par3
+		c4=pixel+par4
+	}
+	{
+		z=z*z
+		z=z+c1
+		z=z*z
+		z=z+c2
+		z=z*z
+		z=z+c3
+		z=z*z
+		z=z+c4
+		w=abs(z)
+	}
+	{
+		w>bailout
+	}
+	{
+		PAR1-4 ARE THE DIFFERENT POINTOFFSETS
+	}
+}
